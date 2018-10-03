@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="wifi_fail_to_scan">Não é possível verificar a existência de redes</string>
     <string name="wifi_security_none">Nenhuma</string>
@@ -3206,9 +3206,9 @@ Divida a tela para vários usos, jogando jogos enquanto atualiza seu Weibo, assi
     <string name="bt_discoverable_title">Enable Bluetooth detection</string>
     <string name="bt_rename_empty">The name cannot be empty</string>
     <string name="bt_rename_exist">This name has already existed</string>
-    <string name="btn_unlock_cancel_text">Cancel</string>
-    <string name="btn_unlock_enroll_text">Enroll</string>
-    <string name="btn_unlock_relation_text">Associate</string>
+    <string name="btn_unlock_cancel_text">Cancelar</string>
+    <string name="btn_unlock_enroll_text">Inscreva-se</string>
+    <string name="btn_unlock_relation_text">Associar</string>
     <string name="byteShort">B</string>
     <string name="call_manager_summary">%1$s</string>
     <string name="can_not_receive_notification">Não pode receber notificação?</string>
@@ -3216,23 +3216,51 @@ Divida a tela para vários usos, jogando jogos enquanto atualiza seu Weibo, assi
     <string name="cancel_tip">cancelar</string>
     <string name="capture_screen_summary">Press and hold the Power key and Volume key together to capture the current screen</string>
     <string name="capture_screen_title">Press keys to take screenshots</string>
-    <string name="card_all_toast">"Card slot 1 and Card slot 2 support 3G/2G network of China Telecom,China Unicom and China Mobile.
+    <string name="card_all_toast">
+        "Card slot 1 and Card slot 2 support 3G/2G network of China Telecom,China Unicom and China Mobile.
+        One card work on 3G network and the other one work on GSM 2G network."
+    </string>
     <string name="card_c_lte_toast">"Card slot 1 and card slot 2 support 4G/3G/2G network of China Telecom.
-    <string name="card_c_toast">"Card slot 1 and card slot 2 support 3G/2G network of China Telecom.
-    <string name="card_g_lte_toast">"Card slot 1 and card slot 2 support 4G/3G/2G network of China Unicom and China Mobile.
-    <string name="card_lte_all_toast">"Card slot 1 and Card slot 2 support 4G/3G/2G network of China Telecom,China Unicom and China Mobile.
-    <string name="card_lte_all_toast_except_clte">"Card slot 1 and Card slot 2 support 3G/2G network of China Telecom and support 4G/3G/2G network of China Unicom and China Mobile.
+One card work on 4G/3G network and the other one work on GSM 2G network."</string>
+    <string name="card_c_toast">
+        "Card slot 1 and card slot 2 support 3G/2G network of China Telecom.
+        One card work on 3G network and the other one work on GSM 2G network."
+    </string>
+    <string name="card_g_lte_toast">
+        "Card slot 1 and card slot 2 support 4G/3G/2G network of China Unicom and China Mobile.
+        One card work on 4G/3G network and the other one work on GSM 2G network."
+    </string>
+    <string name="card_lte_all_toast">
+        "Card slot 1 and Card slot 2 support 4G/3G/2G network of China Telecom,China Unicom and China Mobile.
+        One card work on 4G/3G network and the other one work on GSM 2G network."
+    </string>
+    <string name="card_lte_all_toast_except_clte">
+        "Card slot 1 and Card slot 2 support 3G/2G network of China Telecom and support 4G/3G/2G network of China Unicom and China Mobile.
+        One card work on 3G/4G network and the other one work on GSM 2G network."
+    </string>
     <string name="card_network_2G">2G</string>
     <string name="card_network_3G">3G</string>
     <string name="card_network_4G">4G</string>
     <string name="card_one_id">1</string>
-    <string name="card_tds_lte_toast">"Card slot 1 and card slot 2 support 4G/3G/2G network of China Mobile.
+    <string name="card_tds_lte_toast">
+        "Card slot 1 and card slot 2 support 4G/3G/2G network of China Mobile.
+        One card work on 4G/3G network and the other one work on GSM 2G network."
+    </string>
     <string name="card_two_id">2</string>
     <string name="card_virtualcard">Internaltional Roaming</string>
-    <string name="card_w_c_toast">"Card slot 1 and card slot 2 support 3G/2G network of China Telecom and China Unicom.
-    <string name="card_w_lte_toast">"Card slot 1 and card slot 2 support 4G/3G/2G network of China Unicom.
-    <string name="card_w_toast">"Card slot 1 and card slot 2 support 3G/2G network of China Unicom.
-    <string name="category_key_device">com.android.settings.category.device</string>
+        <string name="card_w_c_toast">
+            "Card slot 1 and card slot 2 support 3G/2G network of China Telecom and China Unicom.
+            One card work on 3G network and the other one work on GSM 2G network."
+        </string>
+        <string name="card_w_lte_toast">
+            "Card slot 1 and card slot 2 support 4G/3G/2G network of China Unicom.
+            One card work on 4G/3G network and the other one work on GSM 2G network."
+        </string>
+        <string name="card_w_toast">
+            "Card slot 1 and card slot 2 support 3G/2G network of China Unicom.
+            One card work on 3G network and the other one work on GSM 2G network."
+        </string>
+        <string name="category_key_device">com.android.settings.category.device</string>
     <string name="category_key_personal">com.android.settings.category.personal</string>
     <string name="category_key_system">com.android.settings.category.system</string>
     <string name="category_key_wireless">com.android.settings.category.wireless</string>
@@ -3242,34 +3270,34 @@ Divida a tela para vários usos, jogando jogos enquanto atualiza seu Weibo, assi
     <string name="china_telecom">China Telecom</string>
     <string name="china_telecom_alert">Enable data if you use China Telecom card.</string>
     <string name="china_unicom">China Unicom</string>
-    <string name="choose_fingerprint_title">Select fingerprint</string>
-    <string name="choose_no_fingerprint">Disable</string>
+    <string name="choose_fingerprint_title">Selecione impressão digital</string>
+    <string name="choose_no_fingerprint">Desativado</string>
     <string name="clear_voice">Acoustic Tone</string>
     <string name="close_android_beam">Turn Off Android Beam</string>
     <string name="closenotificationtextreminder">"wont't be any notification and sound reminders"</string>
-    <string name="cloud_databack_title">Cloud Backup</string>
-    <string name="cloud_manage_title">Cloud Manage</string>
+    <string name="cloud_databack_title">Backup núvem</string>
+    <string name="cloud_manage_title">Gerênciar núvem</string>
     <string name="cloud_recovery_title">Cloud Recovery</string>
     <string name="cloud_service_category_label">Cloud Service</string>
     <string name="cmiit_id">CMIIT ID</string>
     <string name="color_custom">\#%1$02X%2$02X%3$02X</string>
-    <string name="common_success_sub_title">Recording finish, you can unlock phone with your finger</string>
+    <string name="common_success_sub_title">Acabamento de gravação, você pode desbloquear telefone com o dedo</string>
     <string name="compass_degree">%1$d</string>
     <string name="compass_degree_unit">°</string>
-    <string name="config_list_label">Configured networks</string>
-    <string name="confirm_change_desk_layout">Do you confirm change desk layout?</string>
-    <string name="confirm_launcher_mode">Confirm to use this launcher mode</string>
-    <string name="confirm_password_text">Confirm new password</string>
+    <string name="config_list_label">Redes configuradas</string>
+    <string name="confirm_change_desk_layout">Você confirma o layout de mudança da tela?</string>
+    <string name="confirm_launcher_mode">Confirme para usar este modo de inicialização</string>
+    <string name="confirm_password_text">Confirme nova senha</string>
     <string name="confirm_reset">OK</string>
     <string name="content_preview_info1">&lt;font_size>Hover&lt;/font_size> your finger over a folder in Gallery &lt;br/>&lt;font_size>preview&lt;/font_size> the images in the folder</string>
     <string name="content_preview_info2">&lt;font_size>Hover&lt;/font_size> your finger over a video file &lt;br/>&lt;font_size>preview &lt;/font_size> play the video file</string>
     <string name="content_preview_summary">Hover your finger over the screen to preview the content details</string>
     <string name="content_preview_title">Contents preview</string>
-    <string name="cpu_4_cores">4 cores</string>
-    <string name="cpu_6_cores">6 cores</string>
-    <string name="cpu_8_cores">8 cores</string>
+    <string name="cpu_4_cores">4 núcleos</string>
+    <string name="cpu_6_cores">6 núcleos</string>
+    <string name="cpu_8_cores">8 núcleos</string>
     <string name="cpu_bit">bit</string>
-    <string name="cpu_cores">%1$s cores</string>
+    <string name="cpu_cores">%1$s núcleos</string>
     <string name="cpu_info_msm8974">Dragon 801</string>
     <string name="cpu_info_msm8994">Dragon 810</string>
     <string name="cpu_info_msm8996">Dragon 820</string>
@@ -3295,13 +3323,13 @@ Divida a tela para vários usos, jogando jogos enquanto atualiza seu Weibo, assi
     <string name="deep_sleep_music_error">"Can't play musics because of error."</string>
     <string name="deep_sleep_music_title">Sleep Music</string>
     <string name="deep_sleep_onoff_title">Timer switch</string>
-    <string name="deep_sleep_tel_white_anybody">Anybody</string>
-    <string name="deep_sleep_tel_white_contacts">All contacts</string>
-    <string name="deep_sleep_tel_white_customize">Customize</string>
-    <string name="deep_sleep_tel_white_favorites">My Favorites</string>
-    <string name="deep_sleep_tel_white_none">None</string>
+    <string name="deep_sleep_tel_white_anybody">Qualquer pessoa</string>
+    <string name="deep_sleep_tel_white_contacts">Todos contatos</string>
+    <string name="deep_sleep_tel_white_customize">Customizar</string>
+    <string name="deep_sleep_tel_white_favorites">Meus Favoritos</string>
+    <string name="deep_sleep_tel_white_none">Nenhum</string>
     <string name="deep_sleep_title">Sleep Music</string>
-    <string name="default_camera">Camera</string>
+    <string name="default_camera">Câmera</string>
     <string name="default_data_usage_tips">Turn on turbo acceleration for speed</string>
     <string name="default_date_format">dd/MM/yyyy</string>
     <string name="default_document">Documento</string>
@@ -3371,8 +3399,14 @@ Divida a tela para vários usos, jogando jogos enquanto atualiza seu Weibo, assi
     <string name="enable_adb_summary_charging">USB debugging is disabled because the device is in charging mode,</string>
     <string name="enableNetwork">enableNetwork</string>
     <string name="encryption_lock_choose_tips_detail">You need to set lockscreen password to enable encryption, password verify is needed each time when you reboot your device.</string>
-    <string name="encryption_settings_tips_details">"You can encrypt your accounts, settings, downloaded apps and data, media and other files with lockscreen password.
-    <string name="encryption_settings_tips_title">Notice</string>
+        <string name="encryption_settings_tips_details">
+            "You can encrypt your accounts, settings, downloaded apps and data, media and other files with lockscreen password.
+            1 Your power off alarm will be invalid after encryption.
+            2 You need to input password each time after reboot, so the time needed to boot up become longer.
+            3 You need to set a new lockscreen password
+            4 Please remember your lockscreenpassword, you can only recover your device by flashing your device once you forget password."
+        </string>
+        <string name="encryption_settings_tips_title">Notice</string>
     <string name="ese_summary">Embedded Security Module is currently used</string>
     <string name="every_day">Every day</string>
     <string name="exquistite_continuous">Traditional Tone</string>
@@ -3566,10 +3600,10 @@ Divida a tela para vários usos, jogando jogos enquanto atualiza seu Weibo, assi
     <string name="no_data_usage_record">No records on data flow</string>
     <string name="no_dual_instance">Sorry, no dual apps</string>
     <string name="no_zen_mode_downtime_days">"The repeated days won't change due to nothing selected. Please select at least one."</string>
-    <string name="none_default">None</string>
+    <string name="none_default">Nenhum</string>
     <string name="none_user_certs">(use none user certification)</string>
     <string name="nopromptnotice">No prompt notice</string>
-    <string name="normal_date_format">Region (%s)</string>
+    <string name="normal_date_format">Região (%s)</string>
     <string name="not_enable_environment">Connect the wlan and lte at the same time</string>
     <string name="notice_install_alipay">Please install Alipay first</string>
     <string name="notice_install_alipay_clone">Please open duplicated Alipay first</string>
@@ -3589,15 +3623,18 @@ Divida a tela para vários usos, jogando jogos enquanto atualiza seu Weibo, assi
     <string name="nubia_back_button_label">Back</string>
     <string name="nubia_big_deskmode">Easy mode</string>
     <string name="nubia_big_deskmode_summary">Easy mode provides larger text and icons, and simpler interface layout. It allows you to use the phone more conveniently.</string>
-    <string name="nubia_capital_on">ON</string>
+    <string name="nubia_capital_on">Ligado</string>
     <string name="nubia_common_label">nubia</string>
     <string name="nubia_common_versionName">V2.0.4</string>
-    <string name="nubia_date_day">day</string>
-    <string name="nubia_date_month">month</string>
-    <string name="nubia_date_year">year</string>
-    <string name="nubia_empty_message">Content is empty</string>
-    <string name="nubia_font_size_example">"nubia 
-    <string name="nubia_more_popup_text">Cancel</string>
+    <string name="nubia_date_day">dia</string>
+    <string name="nubia_date_month">mês</string>
+    <string name="nubia_date_year">ano</string>
+    <string name="nubia_empty_message">O conteúdo está vazio</string>
+        <string name="nubia_font_size_example">
+            "nubia
+            "
+        </string>
+        <string name="nubia_more_popup_text">Cancel</string>
     <string name="nubia_next_button_label">Next</string>
     <string name="nubia_notification_hour_time">%d hours ago</string>
     <string name="nubia_notification_hours_minutes_time" formatted="false">%d hours and %d minutes ago</string>
@@ -3633,7 +3670,7 @@ Divida a tela para vários usos, jogando jogos enquanto atualiza seu Weibo, assi
     <string name="open_android_beam">Turn on Android Beam</string>
     <string name="open_app_down">Swipe down to start app</string>
     <string name="open_app_up">Swipe up to start app</string>
-    <string name="open_bt">On</string>
+    <string name="open_bt">Ligado</string>
     <string name="otg_progress_erasing">Unmounting USB OTG device</string>
     <string name="palm_lock_screen_summary">Cover the screen with your palm to lock</string>
     <string name="percent_symbol">%</string>
@@ -3767,8 +3804,11 @@ Divida a tela para vários usos, jogando jogos enquanto atualiza seu Weibo, assi
     <string name="shutdown_text">Shut Down Now</string>
     <string name="sigle_ui_title">Modo de uma mão</string>
     <string name="sim_disabled">disabled</string>
-    <string name="sim_enable_disable_lock_not_supported">"Unable to Change SIM/RUIM Lock.
-    <string name="sim_enabled">enabled</string>
+        <string name="sim_enable_disable_lock_not_supported">
+            "Unable to Change SIM/RUIM Lock.
+            SIM/RUIM does not support it."
+        </string>
+        <string name="sim_enabled">enabled</string>
     <string name="sim_enabler_airplane_on">ERROR, airplane mode is on!</string>
     <string name="sim_enabler_both_inactive">"Error, can't disable all the SIM cards"</string>
     <string name="sim_enabler_disabling">Deactivating...</string>
@@ -3782,9 +3822,15 @@ Divida a tela para vários usos, jogando jogos enquanto atualiza seu Weibo, assi
     <string name="sim_lock_settings_category1">SIM card 1 lock settings</string>
     <string name="sim_lock_settings_category2">SIM card 2 lock settings</string>
     <string name="sim_missing">missing or error</string>
-    <string name="sim_pin_attempts">"
-    <string name="sim_pin_change_failed_enable_sim_lock">"Unable to Change SIM/RUIM PIN.
-    <string name="sim_pin_disable_failed">Unable to disable PIN.</string>
+        <string name="sim_pin_attempts">
+            "
+            Attempts remained:"
+        </string>
+        <string name="sim_pin_change_failed_enable_sim_lock">
+            "Unable to Change SIM/RUIM PIN.
+            Enable SIM/RUIM Lock."
+        </string>
+        <string name="sim_pin_disable_failed">Unable to disable PIN.</string>
     <string name="sim_pin_disabled">PIN1 disabled!</string>
     <string name="sim_pin_enable_failed">Unable to enable PIN.</string>
     <string name="sim_pin_enabled">PIN1 enabled!</string>
@@ -3950,36 +3996,39 @@ Divida a tela para vários usos, jogando jogos enquanto atualiza seu Weibo, assi
     <string name="tip_click_twice">click twice to return back</string>
     <string name="tips_for_one_key_grabbing_packet_title">Tips</string>
     <string name="title_for_select">Selected</string>
-    <string name="toggle_three_press_power_button_to_emergency_call_summary">After enabled, quickly press the power button three consecutive times to make an emergency call</string>
-    <string name="toggle_three_press_power_button_to_emergency_call_title">Press Button for Emergency Calls</string>
-    <string name="touch_gesture_free_screenshot">Press and hold the Power key and volume + key to enter Free Screenshot, and draw an enclosed graphic to take a screenshot</string>
-    <string name="touch_gesture_launcher_switch_intro">Swipe down to view notifications</string>
-    <string name="touch_gesture_palm_lockscreen">As the screen lights up, shield the screen with your hands to turn off the screen and lock it</string>
-    <string name="touch_gesture_summary">Perform fast operations on the screen via gestures</string>
-    <string name="touch_gesture_tri_finger_screenshot">Swipe up or down using your three fingers to capture screenshots</string>
-    <string name="touch_gesture_tri_finger_switch_app">Swipe left or right using your three fingers to switch between the opened apps</string>
-    <string name="touch_gesture_wake">Double click the screen to light it up when the screen is turned off</string>
-    <string name="turaccpreferencesummary">Enhance the speed, enjoy the speed of the stability of the network</string>
-    <string name="turbo_acceleration">Turbo acceleration</string>
-    <string name="turboAccelerationopen">on</string>
-    <string name="turboshowleadpagebutton">Immediate experience</string>
-    <string name="turboshowleadpagecontent">"When the use of Wi-Fi Internet, according to the scene of intelligent overlay mobile data, enjoy the speed stable Internet experience.
-    <string name="turboshowleadpagetile">Network acceleration, quick step</string>
+    <string name="toggle_three_press_power_button_to_emergency_call_summary">Depois de ativado, pressione rapidamente o botão liga / desliga três vezes consecutivas para fazer uma chamada de emergência</string>
+    <string name="toggle_three_press_power_button_to_emergency_call_title">Pressione o botão para chamadas de emergência</string>
+    <string name="touch_gesture_free_screenshot">Pressione e segure a tecla Power e tecla volume + para entrar em Free Screenshot, e desenhe um gráfico em anexo para tirar um screenshot</string>
+    <string name="touch_gesture_launcher_switch_intro">Deslize para baixo para ver as notificações</string>
+    <string name="touch_gesture_palm_lockscreen">Quando a tela se acender, proteja a tela com as mãos para desligar a tela e bloqueá-la</string>
+    <string name="touch_gesture_summary">Executar operações rápidas na tela através de gestos</string>
+    <string name="touch_gesture_tri_finger_screenshot">Deslize para cima ou para baixo usando seus três dedos para capturar capturas de tela</string>
+    <string name="touch_gesture_tri_finger_switch_app">Deslize para a esquerda ou para a direita usando seus três dedos para alternar entre os aplicativos abertos</string>
+    <string name="touch_gesture_wake">Clique duas vezes na tela para acendê-la quando a tela estiver desligada</string>
+    <string name="turaccpreferencesummary">Aumente a velocidade, aproveite a velocidade da estabilidade da rede</string>
+    <string name="turbo_acceleration">Aceleração turbo</string>
+    <string name="turboAccelerationopen">Ligado</string>
+    <string name="turboshowleadpagebutton">Experiência imediata</string>
+        <string name="turboshowleadpagecontent">
+            "When the use of Wi-Fi Internet, according to the scene of intelligent overlay mobile data, enjoy the speed stable Internet experience.
+            * acceleration will consume the network traffic of the phone card"
+        </string>
+        <string name="turboshowleadpagetile">Network acceleration, quick step</string>
     <string name="turn_on_answer_call_title">Turn on Answer Calls</string>
-    <string name="turn_on_double_click_title">On</string>
+    <string name="turn_on_double_click_title">Ligado</string>
     <string name="turn_on_forward_or_back_title">Turn on Fast forward/fast rewind</string>
-    <string name="turn_on_free_snapshot_title">On</string>
+    <string name="turn_on_free_snapshot_title">Ligado</string>
     <string name="turn_on_left_right_shake_title">Turn on Shake to change songs</string>
-    <string name="turn_on_palm_lock_screen_title">On</string>
-    <string name="turn_on_powersave_mode">On</string>
-    <string name="turn_on_shake_clear_title">On</string>
+    <string name="turn_on_palm_lock_screen_title">Ligado</string>
+    <string name="turn_on_powersave_mode">Ligado</string>
+    <string name="turn_on_shake_clear_title">Ligado</string>
     <string name="turn_on_shake_update_title">Turn on Shake to update</string>
     <string name="turn_on_silent_or_pause_title">Turn on Silent/Pause</string>
-    <string name="turn_on_single_title">On</string>
+    <string name="turn_on_single_title">Ligado</string>
     <string name="turn_on_slide_screen_title">Turn on swipe</string>
-    <string name="turn_on_three_finger_capture_title">On</string>
-    <string name="turn_on_three_finger_change_app_title">On</string>
-    <string name="turn_on_turn_over_slient_or_pause_title">On</string>
+    <string name="turn_on_three_finger_capture_title">Ligado</string>
+    <string name="turn_on_three_finger_change_app_title">Ligado</string>
+    <string name="turn_on_turn_over_slient_or_pause_title">Ligado</string>
     <string name="turn_on_zen_mode">Turn on priority interruptions</string>
     <string name="turnoff_all_connection_summary">Data connection, Bluetooth, Wi-Fi, Wi-Fi hotspot, GPS</string>
     <string name="turnoff_all_connection_title">Turn off network connection</string>
@@ -4078,8 +4127,11 @@ Divida a tela para vários usos, jogando jogos enquanto atualiza seu Weibo, assi
     <string name="wifi_ant_toast">Antenna switching,please wait</string>
     <string name="wifi_api_test">Wi-Fi API</string>
     <string name="wifi_certificate">WAPI Certificate</string>
-    <string name="wifi_check_addnetwork_message">"No network is found nearby 
-    <string name="wifi_check_addnetwork_title">Attention</string>
+        <string name="wifi_check_addnetwork_message">
+            "Nenhuma rede é encontrada nas proximidades
+            %1$s"
+        </string>
+        <string name="wifi_check_addnetwork_title">Atenção</string>
     <string name="wifi_check_addnetwork_working">Adding network%1$s</string>
     <string name="wifi_config_info">Wi-Fi config</string>
     <string name="wifi_dialog_title">"Please input %1$s's password"</string>
@@ -4099,7 +4151,7 @@ Divida a tela para vários usos, jogando jogos enquanto atualiza seu Weibo, assi
     <string name="wifi_display_resolution_option_480">SD 480P</string>
     <string name="wifi_display_resolution_option_540">SD 540P</string>
     <string name="wifi_display_resolution_option_720">HD 720P</string>
-    <string name="wifi_display_resume">Resume</string>
+    <string name="wifi_display_resume">Resumo</string>
     <string name="wifi_display_session_info">Session info</string>
     <string name="wifi_display_status_available">Available</string>
     <string name="wifi_display_wps_config">WPS configuration</string>
@@ -4133,23 +4185,23 @@ Divida a tela para vários usos, jogando jogos enquanto atualiza seu Weibo, assi
     <string name="wifi_security_wpa">WPA PSK</string>
     <string name="wifi_security_wpa_wpa2">WPA/WPA2 PSK</string>
     <string name="wifi_security_wpa2">WPA2 PSK</string>
-    <string name="wifi_single_ant_summary">Can enhance the phone battery life</string>
+    <string name="wifi_single_ant_summary">Pode melhorar a vida útil da bateria do telefone</string>
     <string name="wifi_speed_unit">" Mbps"</string>
-    <string name="wifi_state_disabled">Disabled</string>
-    <string name="wifi_state_disabling">Disabling</string>
-    <string name="wifi_state_enabled">Enabled</string>
-    <string name="wifi_state_enabling">Enabling</string>
+    <string name="wifi_state_disabled">Desativado</string>
+    <string name="wifi_state_disabling">Desativado</string>
+    <string name="wifi_state_enabled">Ativado</string>
+    <string name="wifi_state_enabling">Ativando</string>
     <string name="wifi_state_label">Wi-Fi state:</string>
     <string name="wifi_state_unknown">Unknown</string>
     <string name="wifi_status_test">Wi-Fi status</string>
     <string name="wifi_uninstall_wapi_cert_success">WiFi WAPI cert is uninstalled</string>
     <string name="wifi_update">Atualizar estatísticas</string>
     <string name="wifi_wapi_as_cert">AS Certificate</string>
-    <string name="wifi_wapi_cert_cancel_button">Cancel</string>
-    <string name="wifi_wapi_cert_create_subdir">Create a directroy</string>
-    <string name="wifi_wapi_cert_delet_subdir">Select a suit certificate</string>
+    <string name="wifi_wapi_cert_cancel_button">Cancelar</string>
+    <string name="wifi_wapi_cert_create_subdir">Criar diretório</string>
+    <string name="wifi_wapi_cert_delet_subdir">Selec. a suit certificate</string>
     <string name="wifi_wapi_cert_install">Install WAPI Certificate</string>
-    <string name="wifi_wapi_cert_install_button">Install</string>
+    <string name="wifi_wapi_cert_install_button">Instalar</string>
     <string name="wifi_wapi_cert_mgmt_as_dont_exist">The SDCard does not has the AS certificate, please checke it!</string>
     <string name="wifi_wapi_cert_mgmt_as_format_is_wrong">The as certificate format is wrong! Please intall right as certificate</string>
     <string name="wifi_wapi_cert_mgmt_as_name_is_empty">Please input the as certificate name</string>
@@ -4200,5 +4252,8 @@ Divida a tela para vários usos, jogando jogos enquanto atualiza seu Weibo, assi
     <string name="zmaster_reset_note_title">Se você precisar salvar um backup de dados pessoais, como contatos, imagens, músicas e outros dados, tente usar o backup na nuvem ou conectado ao computador</string>
     <string name="zmaster_reset_remind_title">Nota: todos os seus dados pessoais e aplicativos baixados serão excluídos e não poderão ser recuperados</string>
     <string name="zmaster_system_application">Configurações do sistema e dados do aplicativo</string>
+	<string name="palm_lock_screen_title">Bloqueio de tela Palm</string>
+	<string name="three_finger_capture_title">Captura de tela com três dedos</string>
+	<string name="three_finger_change_app_title">Aplicativo de troca de dedos</string>
 	
 </resources>
