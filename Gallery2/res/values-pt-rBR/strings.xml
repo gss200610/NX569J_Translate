@@ -573,5 +573,5 @@
     <string name="ztouch_photo_select_warning_one">1 foto selecionada</string>
     <string name="ztouch_photo_select_warning_three">3 fotos selecionadas</string>
     <string name="ztouch_photo_select_warning_two">2 fotos selecionadas</string>
-	
+    <string name="select">Selecionar tudo</string>	
 </resources>
