@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="nubia_lettertext" />
+    <item type="id" name="nubia_datePickerView" />
+    <item type="id" name="nubia_timePickerView" />
+    <item type="id" name="nubia_year_spinner" />
+    <item type="id" name="nubia_month_spinner" />
+    <item type="id" name="nubia_day_spinner" />
+    <item type="id" name="nubia_hour_spinner" />
+    <item type="id" name="nubia_minute_spinner" />
+    <item type="id" name="nubia_blank_region" />
+    <item type="id" name="nubia_pcenterPanel" />
+    <item type="id" name="nubia_dialog_animate_view" />
+    <item type="id" name="nubia_parentPanel" />
+    <item type="id" name="home" />
+    <item type="id" name="up" />
+    <item type="id" name="action_bar_spinner" />
+    <item type="id" name="action_bar_activity_content" />
+    <item type="id" name="split_action_bar" />
+    <item type="id" name="action_menu_divider" />
+    <item type="id" name="action_menu_presenter" />
+    <item type="id" name="progress_circular" />
+    <item type="id" name="progress_horizontal" />
+    <item type="id" name="action_bar_title">false</item>
+    <item type="id" name="action_bar_subtitle">false</item>
+    <item type="id" name="action_mode_close_button">false</item>
+    <item type="id" name="activity_chooser_view_content">false</item>
+    <item type="id" name="expand_activities_button">false</item>
+    <item type="id" name="image">false</item>
+    <item type="id" name="default_activity_button">false</item>
+    <item type="id" name="list_item">false</item>
+    <item type="id" name="icon">false</item>
+    <item type="id" name="title">false</item>
+    <item type="id" name="expanded_menu">false</item>
+    <item type="id" name="checkbox">false</item>
+    <item type="id" name="shortcut">false</item>
+    <item type="id" name="radio">false</item>
+    <item type="id" name="action_bar_root">false</item>
+    <item type="id" name="action_mode_bar_stub">false</item>
+    <item type="id" name="action_mode_bar">false</item>
+    <item type="id" name="nubia_fake_status_bar">false</item>
+    <item type="id" name="decor_content_parent">false</item>
+    <item type="id" name="action_bar_container">false</item>
+    <item type="id" name="action_bar">false</item>
+    <item type="id" name="action_context_bar">false</item>
+    <item type="id" name="big_image_layout">false</item>
+    <item type="id" name="big_image_layout_title">false</item>
+    <item type="id" name="wfdSettings">false</item>
+    <item type="id" name="natation_icon">false</item>
+    <item type="id" name="annotation">false</item>
+    <item type="id" name="wfdStartSource">false</item>
+    <item type="id" name="ButtonLap01">false</item>
+    <item type="id" name="wfdStartSink">false</item>
+    <item type="id" name="TextView01">false</item>
+    <item type="id" name="TestLap01">false</item>
+    <item type="id" name="wfd_device_name">false</item>
+    <item type="id" name="TestLap00">false</item>
+    <item type="id" name="input_customer_device_name_edit">false</item>
+    <item type="id" name="wfd_connect_requeset_layout">false</item>
+    <item type="id" name="wfd_connect_connecting_layout">false</item>
+    <item type="id" name="wfd_waitting_layout">false</item>
+    <item type="id" name="wfd_wait_retry_layout">false</item>
+    <item type="id" name="nubia_animPanel">false</item>
+    <item type="id" name="topPanel">false</item>
+    <item type="id" name="title_template">false</item>
+    <item type="id" name="alertTitle">false</item>
+    <item type="id" name="contentPanel">false</item>
+    <item type="id" name="scrollView">false</item>
+    <item type="id" name="message">false</item>
+    <item type="id" name="customPanel">false</item>
+    <item type="id" name="custom">false</item>
+    <item type="id" name="buttonPanel">false</item>
+    <item type="id" name="button2">false</item>
+    <item type="id" name="button3">false</item>
+    <item type="id" name="button1">false</item>
+    <item type="id" name="progress">false</item>
+    <item type="id" name="progress_percent">false</item>
+    <item type="id" name="progress_number">false</item>
+    <item type="id" name="nubia_year_label">false</item>
+    <item type="id" name="nubia_month_label">false</item>
+    <item type="id" name="nubia_day_label">false</item>
+    <item type="id" name="nubia_dialog_activity_panel">false</item>
+    <item type="id" name="nubia_dialog_activity_cancel">false</item>
+    <item type="id" name="nubia_dialog_activity_ok">false</item>
+    <item type="id" name="nubia_dialog_activity_title">false</item>
+    <item type="id" name="nubia_dialog_activity_content">false</item>
+    <item type="id" name="nubia_card1">false</item>
+    <item type="id" name="nubia_card2">false</item>
+    <item type="id" name="nubia_more_popup_panel">false</item>
+    <item type="id" name="nubia_more_popup_mock_status_bar">false</item>
+    <item type="id" name="nubia_more_popup_top_View">false</item>
+    <item type="id" name="nubia_more_popup_top_divider">false</item>
+    <item type="id" name="nubia_more_popup_dropdown">false</item>
+    <item type="id" name="nubia_more_popup_list">false</item>
+    <item type="id" name="nubia_more_popup_bottom_divider">false</item>
+    <item type="id" name="nubia_more_popup_bottom_View">false</item>
+    <item type="id" name="nubia_more_popup_text">false</item>
+    <item type="id" name="nubia_edittext_container">false</item>
+    <item type="id" name="nubia_message">false</item>
+    <item type="id" name="headers">false</item>
+    <item type="id" name="list_footer">false</item>
+    <item type="id" name="button_bar">false</item>
+    <item type="id" name="back_button">false</item>
+    <item type="id" name="skip_button">false</item>
+    <item type="id" name="next_button">false</item>
+    <item type="id" name="nubia_seekbar">false</item>
+    <item type="id" name="nubia_switchWidget">false</item>
+    <item type="id" name="body">false</item>
+    <item type="id" name="nubia_resolver_list">false</item>
+    <item type="id" name="nubia_indicator">false</item>
+    <item type="id" name="nubia_divider">false</item>
+    <item type="id" name="nubia_button_bar">false</item>
+    <item type="id" name="nubia_button_always">false</item>
+    <item type="id" name="nubia_button_once">false</item>
+    <item type="id" name="nubia_button_cancel">false</item>
+    <item type="id" name="nubia_icon">false</item>
+    <item type="id" name="nubia_text1">false</item>
+    <item type="id" name="nubia_text2">false</item>
+    <item type="id" name="nubia_search_button">false</item>
+    <item type="id" name="nubia_search_edit_frame">false</item>
+    <item type="id" name="nubia_search_mag_icon">false</item>
+    <item type="id" name="nubia_search_plate">false</item>
+    <item type="id" name="nubia_search_src_text">false</item>
+    <item type="id" name="nubia_total">false</item>
+    <item type="id" name="nubia_search_close_btn">false</item>
+    <item type="id" name="nubia_submit_area">false</item>
+    <item type="id" name="nubia_search_go_btn">false</item>
+    <item type="id" name="seekbar">false</item>
+    <item type="id" name="text1">false</item>
+    <item type="id" name="nubia_ampm_spinner">false</item>
+    <item type="id" name="nubia_time_hour_textview">false</item>
+    <item type="id" name="device_name">false</item>
+    <item type="id" name="device_mac_address">false</item>
+    <item type="id" name="device_details">false</item>
+    <item type="id" name="surfaceFrame">false</item>
+    <item type="id" name="wfdSurface">false</item>
+    <item type="id" name="wfd_sink_name">false</item>
+    <item type="id" name="wfd_connecting">false</item>
+    <item type="id" name="wfd_connected">false</item>
+    <item type="id" name="wfd_list_item_progressbar">false</item>
+    <item type="id" name="wfd_right_arrow">false</item>
+    <item type="id" name="wfd_search_warning_view">false</item>
+    <item type="id" name="wfd_connect_req_info_text_view2">false</item>
+    <item type="id" name="wfd_connecting_device_text_view">false</item>
+    <item type="id" name="wfd_accept_connect_button_layout">false</item>
+    <item type="id" name="wfd_connecting_progress_bar">false</item>
+    <item type="id" name="wfd_connecting_info_view">false</item>
+    <item type="id" name="wfd_connect_req_info_text_view">false</item>
+    <item type="id" name="wfd_connect_req_device_text_view">false</item>
+    <item type="id" name="wfd_accept_button">false</item>
+    <item type="id" name="wfd_refuse_button">false</item>
+    <item type="id" name="wfd_connect_button">false</item>
+    <item type="id" name="wfd_connect_state">false</item>
+    <item type="id" name="viewpage">false</item>
+    <item type="id" name="manual_viewpager">false</item>
+    <item type="id" name="pagertitle">false</item>
+    <item type="id" name="page0">false</item>
+    <item type="id" name="page1">false</item>
+    <item type="id" name="wfd_help_01">false</item>
+    <item type="id" name="wfd_help_02">false</item>
+    <item type="id" name="start_btn">false</item>
+    <item type="id" name="wfd_scanning_linearLayout">false</item>
+    <item type="id" name="progressbar_scan">false</item>
+    <item type="id" name="wfd_scanning_name">false</item>
+    <item type="id" name="wfd_scan_result_linearLayout">false</item>
+    <item type="id" name="wfd_scanning_icon">false</item>
+    <item type="id" name="progressbar_result_scan">false</item>
+    <item type="id" name="wfd_scanning_result_name">false</item>
+    <item type="id" name="wfd_scaned_icon">false</item>
+    <item type="id" name="wfd_result_icon">false</item>
+    <item type="id" name="wfd_search_result_name">false</item>
+    <item type="id" name="wfd_scan_list">false</item>
+    <item type="id" name="wfd_noscan_device_linearLayout">false</item>
+    <item type="id" name="wfd_empty_icon">false</item>
+    <item type="id" name="wfd_state_info">false</item>
+    <item type="id" name="wfd_retry_btn">false</item>
+    <item type="id" name="wfd_search_warning_info_view">false</item>
+    <item type="id" name="wfd_wait_retry">false</item>
+    <item type="id" name="wfd_waiting_icon_view">false</item>
+    <item type="id" name="wfd_waiting_state_info_view">false</item>
+    <item type="id" name="deviceNameInfo">false</item>
+    <item type="id" name="nubia_on">false</item>
+    <item type="id" name="nubia_off">false</item>
+    <item type="id" name="pressed">false</item>
+    <item type="id" name="not_pressed">false</item>
+    <item type="id" name="off">false</item>
+    <item type="id" name="on">false</item>
+</resources>

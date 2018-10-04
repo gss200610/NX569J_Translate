@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="wifi_display_resolution_option_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+    <string-array name="wifi_display_resolution_no_1080p_option_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+    <string-array name="wifi_display_resolution_option">
+        <item>@string/wifi_display_resolution_option_1080</item>
+        <item>@string/wifi_display_resolution_option_720</item>
+        <item>@string/wifi_display_resolution_option_540</item>
+        <item>@string/wifi_display_resolution_option_480</item>
+    </string-array>
+    <string-array name="wifi_display_resolution_no_1080p_option">
+        <item>@string/wifi_display_resolution_option_720</item>
+        <item>@string/wifi_display_resolution_option_540</item>
+        <item>@string/wifi_display_resolution_option_480</item>
+    </string-array>
+    <string-array name="characterList">
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+        <item>D</item>
+        <item>E</item>
+        <item>F</item>
+        <item>G</item>
+        <item>H</item>
+        <item>I</item>
+        <item>J</item>
+        <item>K</item>
+        <item>L</item>
+        <item>M</item>
+        <item>N</item>
+        <item>O</item>
+        <item>P</item>
+        <item>Q</item>
+        <item>R</item>
+        <item>S</item>
+        <item>T</item>
+        <item>U</item>
+        <item>V</item>
+        <item>W</item>
+        <item>X</item>
+        <item>Y</item>
+        <item>Z</item>
+        <item>\#</item>
+    </string-array>
+</resources>
