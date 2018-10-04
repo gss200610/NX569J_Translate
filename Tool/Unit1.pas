@@ -71,6 +71,9 @@ begin
     begin
       if tag.Trim <> '' then
       begin
+        if Pos('</', linha) = 0 then
+          linha := linha + ' SEM TAG';
+
         wListaEx1.Add(linha);
         Memo2.Lines.Add(linha);
       end;
