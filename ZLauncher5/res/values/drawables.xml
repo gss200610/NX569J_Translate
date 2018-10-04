@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="drawable" name="nubia_dialog_background_transparent">#00000000</item>
+    <item type="drawable" name="default_pic">#ffc7c7c7</item>
+</resources>

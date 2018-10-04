@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="nubia_config_closeDialogWhenTouchOutside">true</bool>
+    <bool name="nubia_config_allowActionMenuItemTextWithIcon">true</bool>
+    <bool name="nubia_split_action_bar_is_narrow">true</bool>
+    <bool name="nubia_sync_name_about_phone">true</bool>
+    <bool name="config_largeHeap">false</bool>
+    <bool name="launcher_allow_rotation">false</bool>
+    <bool name="enable_backup">false</bool>
+    <bool name="allow_rotation">false</bool>
+</resources>

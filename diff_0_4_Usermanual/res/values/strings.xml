@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Usermanual</string>
+    <string name="action_settings">Configurações</string>
+    <string name="hello_world">Olá mundo!</string>
+    <string name="user_manual">Manual usuário</string>
+</resources>

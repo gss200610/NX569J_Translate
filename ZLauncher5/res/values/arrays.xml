@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="config_statusBarIcons">
+        <item>power_saving</item>
+        <item>roaming_icon</item>
+        <item>headset</item>
+        <item>sleep_mode</item>
+        <item>ime</item>
+        <item>sync_failing</item>
+        <item>sync_active</item>
+        <item>location</item>
+        <item>bluetooth</item>
+        <item>nfc</item>
+        <item>tty</item>
+        <item>speakerphone</item>
+        <item>mute</item>
+        <item>volume</item>
+        <item>wifi</item>
+        <item>cdma_eri</item>
+        <item>phone_signal_second_sub</item>
+        <item>data_connection</item>
+        <item>phone_evdo_signal</item>
+        <item>phone_signal</item>
+        <item>battery</item>
+        <item>alarm_clock</item>
+        <item>secure</item>
+        <item>clock</item>
+        <item>gesture_status</item>
+    </string-array>
+    <integer-array name="nubia_config_autoBrightnessLevels">
+        <item>1</item>
+        <item>10</item>
+        <item>50</item>
+        <item>100</item>
+        <item>400</item>
+        <item>900</item>
+        <item>2000</item>
+        <item>5000</item>
+    </integer-array>
+    <integer-array name="nubia_config_autoBrightnessLcdBacklightValues">
+        <item>4</item>
+        <item>9</item>
+        <item>27</item>
+        <item>48</item>
+        <item>61</item>
+        <item>69</item>
+        <item>117</item>
+        <item>170</item>
+        <item>223</item>
+    </integer-array>
+    <string-array name="wallpapers">
+        <item>wallpaper_01</item>
+        <item>wallpaper_02</item>
+        <item>wallpaper_03</item>
+        <item>wallpaper_04</item>
+        <item>wallpaper_05</item>
+        <item>wallpaper_06</item>
+        <item>wallpaper_07</item>
+        <item>wallpaper_08</item>
+        <item>wallpaper_09</item>
+        <item>wallpaper_10</item>
+        <item>wallpaper_11</item>
+        <item>wallpaper_12</item>
+        <item>wallpaper_13</item>
+        <item>wallpaper_14</item>
+        <item>wallpaper_15</item>
+        <item>wallpaper_16</item>
+        <item>wallpaper_17</item>
+        <item>wallpaper_18</item>
+        <item>wallpaper_19</item>
+        <item>wallpaper_20</item>
+        <item>wallpaper_21</item>
+        <item>wallpaper_22</item>
+        <item>wallpaper_23</item>
+        <item>wallpaper_24</item>
+        <item>wallpaper_25</item>
+    </string-array>
+    <string-array name="componentName">
+        <item>cn.nubia.v5light.preset/cn.nubia.v5light.MainActivity</item>
+        <item>cn.nubia.systemupdate/cn.nubia.systemupdate.SystemUpdateActivity</item>
+        <item>cn.nubia.systemupdate/.SystemUpdateActivity</item>
+        <item>com.android.settings/com.android.settings.Settings$EdgeSettingsActivity</item>
+        <item>com.android.settings/.Settings$EdgeSettingsActivity</item>
+        <item>com.android.settings/com.android.settings.dual.DualManagerAppActivity</item>
+        <item>com.android.settings/.dual.DualManagerAppActivity</item>
+        <item>com.android.settings/com.android.settings.Settings$SuperSnapSettingsActivity</item>
+        <item>com.android.settings/.Settings$SuperSnapSettingsActivity</item>
+        <item>com.google.android.googlequicksearchbox/com.google.android.googlequicksearchbox.VoiceSearchActivity</item>
+        <item>com.google.android.googlequicksearchbox/.VoiceSearchActivity</item>
+        <item>cn.nubia.launcher/com.android.launcher3.functionicon.LockScreenIcon</item>
+        <item>cn.nubia.launcher/com.android.launcher3.functionicon.CleanUpIcon</item>
+        <item>cn.nubia.email/com.android.email.activity.Welcome</item>
+    </string-array>
+</resources>

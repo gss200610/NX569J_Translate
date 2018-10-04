@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="nubia_lettertext" />
+    <item type="id" name="nubia_datePickerView" />
+    <item type="id" name="nubia_timePickerView" />
+    <item type="id" name="nubia_year_spinner" />
+    <item type="id" name="nubia_month_spinner" />
+    <item type="id" name="nubia_day_spinner" />
+    <item type="id" name="nubia_hour_spinner" />
+    <item type="id" name="nubia_minute_spinner" />
+    <item type="id" name="nubia_blank_region" />
+    <item type="id" name="nubia_pcenterPanel" />
+    <item type="id" name="nubia_dialog_animate_view" />
+    <item type="id" name="nubia_parentPanel" />
+    <item type="id" name="noslidepager">false</item>
+    <item type="id" name="neopage_indicator">false</item>
+    <item type="id" name="application_icon">false</item>
+    <item type="id" name="apps_customize_pane_content">false</item>
+    <item type="id" name="apps_customize_page_indicator">false</item>
+    <item type="id" name="widget_preview">false</item>
+    <item type="id" name="widget_name">false</item>
+    <item type="id" name="widget_dims">false</item>
+    <item type="id" name="taskcleardrawable">false</item>
+    <item type="id" name="camera_icon">false</item>
+    <item type="id" name="title_textview">false</item>
+    <item type="id" name="content">false</item>
+    <item type="id" name="message_textview">false</item>
+    <item type="id" name="content_layout">false</item>
+    <item type="id" name="bottom">false</item>
+    <item type="id" name="dialog_button_cancel">false</item>
+    <item type="id" name="divider">false</item>
+    <item type="id" name="dialog_button_ok">false</item>
+    <item type="id" name="main_content">false</item>
+    <item type="id" name="neosharecontent">false</item>
+    <item type="id" name="camera_content">false</item>
+    <item type="id" name="delete_drop_trashcan">false</item>
+    <item type="id" name="delete_drop_haloparticle">false</item>
+    <item type="id" name="delete_drop_sweeplight">false</item>
+    <item type="id" name="delete_drop_confirm">false</item>
+    <item type="id" name="delete_drop_confirm_sum">false</item>
+    <item type="id" name="delete_drop_confirm_btn_cancel">false</item>
+    <item type="id" name="delete_drop_confirm_btn_confirm">false</item>
+    <item type="id" name="folder_addlist_gird_icon">false</item>
+    <item type="id" name="choice_state_image">false</item>
+    <item type="id" name="add_app_button">false</item>
+    <item type="id" name="folder_cancel_choice_btn">false</item>
+    <item type="id" name="choice_count_description">false</item>
+    <item type="id" name="count_text_view">false</item>
+    <item type="id" name="folder_confirm_choice_btn">false</item>
+    <item type="id" name="folder_applist__content">false</item>
+    <item type="id" name="preview_background">false</item>
+    <item type="id" name="folder_icon_name">false</item>
+    <item type="id" name="touch_bg">false</item>
+    <item type="id" name="touch_icon">false</item>
+    <item type="id" name="touch_icon_back">false</item>
+    <item type="id" name="press_list">false</item>
+    <item type="id" name="ic_priview">false</item>
+    <item type="id" name="layout">false</item>
+    <item type="id" name="launcher">false</item>
+    <item type="id" name="drag_layer">false</item>
+    <item type="id" name="workspace">false</item>
+    <item type="id" name="page_indicator">false</item>
+    <item type="id" name="presstouch">false</item>
+    <item type="id" name="darken_layer">false</item>
+    <item type="id" name="hotseat">false</item>
+    <item type="id" name="neoBtn">false</item>
+    <item type="id" name="refresh">false</item>
+    <item type="id" name="folder_bg">false</item>
+    <item type="id" name="editpanel">false</item>
+    <item type="id" name="overview_panel">false</item>
+    <item type="id" name="wallpaper_panel">false</item>
+    <item type="id" name="live_wallpaper_panel">false</item>
+    <item type="id" name="delete_drop_bar">false</item>
+    <item type="id" name="search_bar">false</item>
+    <item type="id" name="apps_customize_pane">false</item>
+    <item type="id" name="colored_egg">false</item>
+    <item type="id" name="workspace_container">false</item>
+    <item type="id" name="wallpaper_image">false</item>
+    <item type="id" name="wallpaper_icon">false</item>
+    <item type="id" name="wallpaper_item_label">false</item>
+    <item type="id" name="live_wallpaper_set_button">false</item>
+    <item type="id" name="live_wallpaper_panel_global">false</item>
+    <item type="id" name="live_wallpaper_panel_scroll_container">false</item>
+    <item type="id" name="master_live_wallpaper_panel_list">false</item>
+    <item type="id" name="live_wallpaper_list">false</item>
+    <item type="id" name="imagepic">false</item>
+    <item type="id" name="nubia_animPanel">false</item>
+    <item type="id" name="topPanel">false</item>
+    <item type="id" name="title_template">false</item>
+    <item type="id" name="icon">false</item>
+    <item type="id" name="alertTitle">false</item>
+    <item type="id" name="contentPanel">false</item>
+    <item type="id" name="scrollView">false</item>
+    <item type="id" name="message">false</item>
+    <item type="id" name="customPanel">false</item>
+    <item type="id" name="custom">false</item>
+    <item type="id" name="buttonPanel">false</item>
+    <item type="id" name="button2">false</item>
+    <item type="id" name="button3">false</item>
+    <item type="id" name="button1">false</item>
+    <item type="id" name="nubia_more_popup_panel">false</item>
+    <item type="id" name="nubia_more_popup_mock_status_bar">false</item>
+    <item type="id" name="nubia_more_popup_top_View">false</item>
+    <item type="id" name="nubia_more_popup_top_divider">false</item>
+    <item type="id" name="nubia_more_popup_dropdown">false</item>
+    <item type="id" name="nubia_more_popup_top_margin_view">false</item>
+    <item type="id" name="nubia_more_popup_list">false</item>
+    <item type="id" name="nubia_more_popup_bottom_margin_view">false</item>
+    <item type="id" name="nubia_more_popup_bottom_divider">false</item>
+    <item type="id" name="nubia_more_popup_bottom_View">false</item>
+    <item type="id" name="seekbar">false</item>
+    <item type="id" name="text1">false</item>
+    <item type="id" name="nubia_panel">false</item>
+    <item type="id" name="nubia_buttonSelect">false</item>
+    <item type="id" name="nubia_separator1">false</item>
+    <item type="id" name="nubia_buttonSelectAll">false</item>
+    <item type="id" name="nubia_separator2">false</item>
+    <item type="id" name="nubia_buttonPaste">false</item>
+    <item type="id" name="nubia_separator3">false</item>
+    <item type="id" name="nubia_buttonPasteList">false</item>
+    <item type="id" name="nubia_arrow_up">false</item>
+    <item type="id" name="nubia_arrow_down">false</item>
+    <item type="id" name="nubia_buttonCopy">false</item>
+    <item type="id" name="nubia_buttonCut">false</item>
+    <item type="id" name="settings_button">false</item>
+    <item type="id" name="wallpaper_button">false</item>
+    <item type="id" name="theme_button">false</item>
+    <item type="id" name="widget_button">false</item>
+    <item type="id" name="editmode_button">false</item>
+    <item type="id" name="indicator_text_show">false</item>
+    <item type="id" name="page_indicator_inner">false</item>
+    <item type="id" name="indicator_seekbar">false</item>
+    <item type="id" name="text_item">false</item>
+    <item type="id" name="grid_view">false</item>
+    <item type="id" name="web_search">false</item>
+    <item type="id" name="img">false</item>
+    <item type="id" name="text">false</item>
+    <item type="id" name="root">false</item>
+    <item type="id" name="view_pager">false</item>
+    <item type="id" name="btn_cancel">false</item>
+    <item type="id" name="btn_apply">false</item>
+    <item type="id" name="folder_name">false</item>
+    <item type="id" name="scroll_view">false</item>
+    <item type="id" name="folder_content">false</item>
+    <item type="id" name="wallpaper_panel_global">false</item>
+    <item type="id" name="wallpaper_panel_scroll_container">false</item>
+    <item type="id" name="master_wallpaper_panel_list">false</item>
+    <item type="id" name="simple_wallpaper_list">false</item>
+    <item type="id" name="wallpaper_set_button">false</item>
+    <item type="id" name="wallpaper_tile_text">false</item>
+    <item type="id" name="nubia_on">false</item>
+    <item type="id" name="nubia_off">false</item>
+</resources>
