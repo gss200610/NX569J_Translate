@@ -1,0 +1,26 @@
+ O volume na unidade D ‚ NEW_1
+ O N£mero de S‚rie do Volume ‚ 2A25-261E
+
+ Pasta de D:\Nubia-Z17-mini\Traducao_global_212\NX569J_Translate
+
+05/10/2018  09:47    <DIR>          .
+05/10/2018  09:47    <DIR>          ..
+03/10/2018  18:35    <DIR>          Camera
+03/10/2018  21:58    <DIR>          Contacts
+04/10/2018  19:07    <DIR>          diff_0_4_Usermanual
+03/10/2018  18:35    <DIR>          framework-nubia-res
+03/10/2018  18:35    <DIR>          framework-res
+04/10/2018  19:07    <DIR>          Gallery2
+05/10/2018  09:43    <DIR>          InCallUI
+05/10/2018  09:47                 0 LISTA.TXT
+05/10/2018  09:43    <DIR>          nubia_myfile
+05/10/2018  09:47               104 README.md
+03/10/2018  07:21    <DIR>          Settings
+03/10/2018  18:35    <DIR>          SystemUI
+04/10/2018  19:21    <DIR>          Tool
+03/10/2018  18:35    <DIR>          twrp_create_zip
+04/10/2018  19:07    <DIR>          ZLauncher5
+03/10/2018  18:35    <DIR>          ZQuickSearchBox
+04/10/2018  19:07    <DIR>          ZWfdClient
+               2 arquivo(s)            104 bytes
+              17 pasta(s)   334.320.934.912 bytes dispon¡veis
