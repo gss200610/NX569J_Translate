@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:sharedUserId="android.uid.system" package="cn.nubia.sensor" platformBuildVersionCode="23" platformBuildVersionName="6.0.1">
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <application android:label="@string/app_label" android:supportsRtl="true">
+        <activity android:label="@string/app_label" android:name="cn.nubia.sensor.SensorDemoActivity" android:theme="@style/Theme.Sensor"/>
+        <activity android:label="@string/sensor_adjust_proximity" android:name="cn.nubia.sensor.SensorActivity$ProximityAdjustActivity" android:screenOrientation="@nubia:integer/nubia_screen_orientation" android:theme="@style/Theme.Sensor">
+            <meta-data android:name="cn.nubia.sensor.FRAGMENT_CLASS" android:value="cn.nubia.sensor.ProximityAdjustFragment"/>
+            <meta-data android:name="cn.nubia.sensor.TITLE_RESID" android:resource="@string/sensor_adjust_proximity"/>
+        </activity>
+        <activity android:label="@string/sensor_adjust_magnetic" android:name="cn.nubia.sensor.SensorActivity$CompassCaliActivity" android:screenOrientation="@nubia:integer/nubia_screen_orientation" android:theme="@style/Theme.Sensor">
+            <meta-data android:name="cn.nubia.sensor.FRAGMENT_CLASS" android:value="cn.nubia.sensor.CompassCaliFragment"/>
+            <meta-data android:name="cn.nubia.sensor.TITLE_RESID" android:resource="@string/sensor_adjust_magnetic"/>
+        </activity>
+        <activity android:label="@string/sensor_adjust_magnetic" android:name="cn.nubia.sensor.CompassCaliSuccessActivity" android:screenOrientation="@nubia:integer/nubia_screen_orientation" android:theme="@style/Theme.Sensor"/>
+        <activity android:label="@string/sensor_adjust_gravity" android:name="cn.nubia.sensor.SensorActivity$GravityAdjustActivity" android:screenOrientation="@nubia:integer/nubia_screen_orientation" android:theme="@style/Theme.Sensor">
+            <meta-data android:name="cn.nubia.sensor.FRAGMENT_CLASS" android:value="cn.nubia.sensor.GravityAdjustFragment"/>
+            <meta-data android:name="cn.nubia.sensor.TITLE_RESID" android:resource="@string/sensor_adjust_gravity"/>
+        </activity>
+        <activity android:label="@string/sensor_adjust_finger" android:name="cn.nubia.sensor.SensorActivity$FingerprintActivity" android:screenOrientation="@nubia:integer/nubia_screen_orientation" android:theme="@style/Theme.Sensor">
+            <meta-data android:name="cn.nubia.sensor.FRAGMENT_CLASS" android:value="cn.nubia.sensor.FingerprintAdjustFragment"/>
+            <meta-data android:name="cn.nubia.sensor.TITLE_RESID" android:resource="@string/sensor_adjust_finger"/>
+        </activity>
+    </application>
+</manifest>

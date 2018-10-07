@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="msensor">false</item>
+    <item type="id" name="view_msensor">false</item>
+    <item type="id" name="compass_layout">false</item>
+    <item type="id" name="view_compass">false</item>
+    <item type="id" name="compass_cali_result">false</item>
+    <item type="id" name="degree">false</item>
+    <item type="id" name="finger_image">false</item>
+    <item type="id" name="finger_desc">false</item>
+    <item type="id" name="finger_btn">false</item>
+    <item type="id" name="view_g_calibrate">false</item>
+    <item type="id" name="text_g_explain">false</item>
+    <item type="id" name="bt_g_calibrate">false</item>
+    <item type="id" name="proximity_btn">false</item>
+    <item type="id" name="proximity_desc">false</item>
+    <item type="id" name="main_content">false</item>
+    <item type="id" name="sensor_custom_title_id">false</item>
+    <item type="id" name="actionbar_sensor_right">false</item>
+    <item type="id" name="actionbar_sensor_right_icon">false</item>
+    <item type="id" name="proximity">false</item>
+    <item type="id" name="gravity">false</item>
+    <item type="id" name="magnetic">false</item>
+    <item type="id" name="finger">false</item>
+</resources>

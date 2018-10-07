@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="adjust_remind_info_color">#ff000000</color>
+    <color name="sensor_ball_color">#ff49cc3d</color>
+    <color name="statusbar_color">#fff5f5f5</color>
+</resources>

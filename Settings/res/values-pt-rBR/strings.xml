@@ -4226,7 +4226,7 @@ One card work on 4G/3G network and the other one work on GSM 2G network."</strin
     <string name="zen_mode_end_time_summary_format">%s próximo dia</string>
     <string name="zen_mode_entry_conditions_title">Ativação automática</string>
     <string name="zen_mode_from_customize">Apenas contatos personalizados</string>
-    <string name="zen_mode_important_category">Priority interruptions</string>
+    <string name="zen_mode_important_category">Interrupções prioritárias</string>
     <string name="zen_mode_important_settings">Configurações de interrupções</string>
     <string name="zen_mode_phone_calls">Chamadas recebidas</string>
     <string name="zen_mode_repeat_calls">Repetir chamadas não bloqueadas</string>
@@ -4255,5 +4255,44 @@ One card work on 4G/3G network and the other one work on GSM 2G network."</strin
 	<string name="palm_lock_screen_title">Bloqueio de tela Palm</string>
 	<string name="three_finger_capture_title">Captura de tela com três dedos</string>
 	<string name="three_finger_change_app_title">Aplicativo de troca de dedos</string>
+	<string name="wifi_display_certification_heading">Certificação</string>
+    <string name="wifi_display_session_info">Informação da sessão</string>
+    <string name="wifi_display_listen_mode">Ativar modo de escuta</string>
+    <string name="wifi_display_autonomous_go">Ativar GO autônomo</string>
+    <string name="wifi_display_pause">Pausa</string>
+    <string name="wifi_display_resume">Resumo</string>
+    <string name="wifi_display_wps_config">Configuração WPS</string>
+    <string name="wifi_display_listen_channel">Ouvir canal</string>
+    <string name="wifi_display_operating_channel">Canal operacional</string>
+    <string name="testing_wifi_info">Informações de Wi-Fi</string>
+    <string name="disableNetwork">desabilitar rede</string>
+    <string name="enableNetwork">habilitar rede</string>
+    <string name="disconnect">disconectar</string>
+    <string name="getConfiguredNetworks">obter redes configuradas</string>
+    <string name="getConnectionInfo">obter informações de conexão</string>
+    <string name="wifi_api_test">Wi-Fi API</string>
+    <string name="wifi_status_test">Wi-Fi status</string>
+    <string name="wifi_update">Atualizar estatísticas</string>
+    <string name="wifi_state_label">Estado Wi-Fi:</string>
+    <string name="network_state_label">Estaodo rede:</string>
+    <string name="supplicant_state_label">Estado suplicante:</string>
+    <string name="testing_wifi_info">Informação Wi-Fi</string>
+    <string name="link_speed_label">Velocidade do link:</string>
+    <string name="scan_list_label">Resultados da verificação:</string>
+    <string name="wifi_state_disabling">Desativando</string>
+    <string name="wifi_state_disabled">Desativado</string>
+    <string name="wifi_state_enabling">Ativando</string>
+    <string name="wifi_state_enabled">Ativado</string>
+    <string name="wifi_state_unknown">Desconhecido</string>
+    <string name="wifi_config_info">Configuração Wi-Fi</string>
+    <string name="config_list_label">Redes configuradas</string>
+    <string name="time_zone_auto_stub">Selecione o fuso horário</string>
+    <string name="power_save_title">Pgerenciamento de economia de energia</string>
+    <string name="power_save_summary">Sistema irá limpar aplicativos de fundo automaticamente de acordo com o uso do aplicativo</string>
+    <string name="toggle_three_press_power_button_to_emergency_call_title">Pressione o botão para
+         Ligações de emergência</string>
+    <string name="toggle_three_press_power_button_to_emergency_call_summary">Depois de ativado, rapidamente
+         pressione o botão de energia três vezes consecutivas para fazer uma chamada de emergência</string>
+	
 	
 </resources>

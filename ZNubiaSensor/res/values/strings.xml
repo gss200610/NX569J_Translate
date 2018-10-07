@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_label">Sensor</string>
+    <string name="compass_degree">%1$d</string>
+    <string name="compass_degree_unit">°</string>
+    <string name="sensor_adjust_title">Sensor calibration</string>
+    <string name="sensor_adjust_magnetic">Magnetic sensor calibration</string>
+    <string name="sensor_adjust_gravity">G-sensor calibration</string>
+    <string name="sensor_adjust_proximity">Proximity sensor calibration</string>
+    <string name="proximity_adjust_desc">During the calibration process, do not expose to strong sunlight or cover the front side of the phone</string>
+    <string name="adjust">Calibrate</string>
+    <string name="adjusting">Calibrating…</string>
+    <string name="adjust_success">Calibration succeeded</string>
+    <string name="adjust_failed">Calibration failed</string>
+    <string name="adjust_again">Recalibrate</string>
+    <string name="proximity_adjust_fail_desc">Calibration failed. Do not expose to strong sunlight or cover the front side of the phone</string>
+    <string name="prox_calibrate_not_support">Calibration is not supported for this chipset!</string>
+    <string name="prox_calibrate_access_exception">The bottom-layer driver has not provided relevant function nodes!</string>
+    <string name="magnetic_calibration_operation">Please follow the operation in the figure to calibrate</string>
+    <string name="gravity_remind">Put your phone on a horizontal table and click the Calibrate button for calibration</string>
+    <string name="sensor_adjusting">Calibrating now, please do not move your phone</string>
+    <string name="reset_data">Restore factory default settings</string>
+    <string name="is_sensor_reset_data">Reset G-sensor to factory settings?</string>
+    <string name="reset_sensor_data">Has been reset to factory settings</string>
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="cannot_get_magnetic_sensor">Can not get magnetic sensor, please exit and try aggain</string>
+    <string name="sensor_adjust_finger">FingerPrint Sensor calibration</string>
+    <string name="finger_adjust_desc">During the calibration process,do not touch the fingerprint sensor</string>
+    <string name="finger_adjust_error">Calibration failed,do not touch the fingerprint sensor</string>
+    <string name="finger_adjust_success">Calibration succeeded</string>
+</resources>

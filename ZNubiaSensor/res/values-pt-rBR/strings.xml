@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sensor_adjust_proximity">Calibração do sensor de proximidade</string>
+    <string name="proximity_adjust_desc">Durante o processo de calibragem, não o exponha à luz solar forte ou cobrir o lado da frente do telefone</string>
+    <string name="adjust">Calibrar</string>
+    <string name="adjusting">Calibrar...</string>
+    <string name="adjust_success">Calibração sucedido</string>
+    <string name="adjust_failed">Falha na calibração</string>
+    <string name="adjust_again">Recalibrar</string>
+    <string name="proximity_adjust_fail_desc">Calibração falhou. Não exponha à luz solar forte ou cobrir o lado da frente do telefone</string>
+    <string name="prox_calibrate_not_support">A calibração não é suportado para este chipset!</string>
+    <string name="prox_calibrate_access_exception">O motorista bottom-camada não providenciou nós de função relevantes!</string>
+    <string name="magnetic_calibration_operation">Por favor, siga a operação na figura para calibrar</string>
+    <string name="gravity_remind">Coloque o telefone sobre uma mesa horizontal e clique no botão Calibrar para calibração</string>
+    <string name="sensor_adjusting">Calibrar agora, por favor, não mova o telefone</string>
+    <string name="reset_data">Restaurar configurações</string>
+    <string name="is_sensor_reset_data">Redefinir G-sensor para as configurações de fábrica?</string>
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">Cancelar</string>
+    <string name="app_label">Sensor </string>
+    <string name="sensor_adjust_title"> Calibração de sensor </string>
+    <string name="sensor_adjust_magnetic"> Calibração de sensor magnética </string>
+    <string name="sensor_adjust_gravity"> Calibração de G-sensor </string>
+    <string name="reset_sensor_data"> Foi reajustado para os ajustes de fábrica </string>
+    <string name="cannot_get_magnetic_sensor"> Não pode obter o sensor magnético, favor sair e tente
+        de novo </string>
+    <string name="sensor_adjust_finger"> Calibração de Sensor de Impressão Digital </string>
+    <string name="finger_adjust_desc"> Durante o processo de calibração, não toque o sensor de
+        impressão digital </string>
+    <string name="finger_adjust_error"> Calibração falhada, não tocar o sensor de impressão digital </string>
+    <string name="finger_adjust_success"> Calibração sucedida </string>
+	
+</resources>

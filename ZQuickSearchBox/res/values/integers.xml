@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="num_suggestions_above_keyboard">4</integer>
+    <integer name="max_promoted_suggestions">18</integer>
+    <integer name="max_promoted_results">9</integer>
+    <integer name="corpus_selection_dialog_columns">4</integer>
+    <integer name="abc_config_activityShortDur">150</integer>
+    <integer name="abc_config_activityDefaultDur">220</integer>
+    <integer name="nubia_preference_fragment_scrollbarStyle">0x02000000</integer>
+    <integer name="abc_max_action_buttons">2</integer>
+</resources>

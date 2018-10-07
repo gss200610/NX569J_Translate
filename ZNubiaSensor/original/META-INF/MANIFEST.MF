@@ -1,0 +1,102 @@
+Manifest-Version: 1.0
+Created-By: 1.7.0_79 (Oracle Corporation)
+
+Name: res/drawable-xxhdpi-v4/finger_right.png
+SHA1-Digest: ybNEkYEzAJTKqeJ0U8jQs77DTAQ=
+
+Name: res/drawable-xxhdpi-v4/chuanganqi_00005.png
+SHA1-Digest: uVeaaQGmfE8zAwGNWtaoVcMDcmw=
+
+Name: res/drawable-v21/sensor_actionbar_more.xml
+SHA1-Digest: rZ6Xy4Bs/HoCcpQLNXbi0YrmCvE=
+
+Name: res/drawable-xxhdpi-v4/chuanganqi_00010.png
+SHA1-Digest: 9Vmwvd6uTrse4MLnS1rJJdEXg/0=
+
+Name: res/drawable-xxhdpi-v4/cross.png
+SHA1-Digest: 7WWHvL6VBQBnBWMUG3ynCUpUcX4=
+
+Name: resources.arsc
+SHA1-Digest: bf9m4hfdBt2tMQXO0m5XBujk774=
+
+Name: res/drawable-xxhdpi-v4/chuanganqi_00002.png
+SHA1-Digest: OAxRy9GQuFYulBAQOcN5iO4PYxg=
+
+Name: res/layout/proximity_adjust_layout.xml
+SHA1-Digest: 0OEL+liabhHSNJN/6uiymOAFjFo=
+
+Name: AndroidManifest.xml
+SHA1-Digest: PQWFC8ove2/64O1SLtQjNhTVXwo=
+
+Name: res/drawable-xxhdpi-v4/chuanganqi_00000.png
+SHA1-Digest: 9Vmwvd6uTrse4MLnS1rJJdEXg/0=
+
+Name: res/drawable-xxhdpi-v4/finger_sensor_back.png
+SHA1-Digest: NS6COMcqf5pwbM6V5yQa15pXFlI=
+
+Name: res/drawable-xxhdpi-v4/chuanganqi_00003.png
+SHA1-Digest: JmunDq71spvAjLsVicClbO2x+5w=
+
+Name: res/drawable-xxhdpi-v4/finger_sensor_right.png
+SHA1-Digest: WdeedtSqSwX0ChS+CMCc/kBtVgM=
+
+Name: res/layout/sensor_custom_title.xml
+SHA1-Digest: /GUUMczN72FdmYwvTsvbSklkBQk=
+
+Name: res/layout/sensor_content.xml
+SHA1-Digest: 39RVqhj7qmq8+g0DTijpGfpPN1I=
+
+Name: res/drawable-xxhdpi-v4/compass_e.png
+SHA1-Digest: nbpKhx4Pe+MR3u7Pd3ASIM0fC6U=
+
+Name: res/layout/sensor_main.xml
+SHA1-Digest: LhwGQ9nIOaldEyAO2xRafu+scyI=
+
+Name: res/layout/compass_cali_activity.xml
+SHA1-Digest: 5SvPTwYonMWOVXcMwMPi472Y1c0=
+
+Name: res/drawable-xxhdpi-v4/chuanganqi_00008.png
+SHA1-Digest: Gdr+8hT+hKw5003siTVxIaYjwRA=
+
+Name: res/drawable-xxhdpi-v4/compass_c.png
+SHA1-Digest: 3B8yijlA/NKmH9kJCpx/bbTR3q0=
+
+Name: res/drawable-xxhdpi-v4/chuanganqi_00009.png
+SHA1-Digest: yD+4St7yMUIdWar62QRG2myPOaA=
+
+Name: res/drawable-xxhdpi-v4/proximity_adjust.png
+SHA1-Digest: qWnh4jLSPzW8RbtayDaakDEi1B0=
+
+Name: res/drawable-xxhdpi-v4/chuanganqi_00006.png
+SHA1-Digest: LFUMgFJqcSDq11iwFeMNkz+bJik=
+
+Name: res/drawable-xxhdpi-v4/chuanganqi_00001.png
+SHA1-Digest: PEzZ0cGCFVaZaM8opGhUOwxDk6U=
+
+Name: res/drawable-xxhdpi-v4/background_8.png
+SHA1-Digest: 0519K6LR/BK4CokMhPegNn3qvtM=
+
+Name: res/layout/finger_adjust_layout.xml
+SHA1-Digest: MTUzK+he8Cw7XU2nCGaTjmCszY4=
+
+Name: res/layout/compass_cali_success_layout.xml
+SHA1-Digest: zYvvJisp6LAFcS8fQaUvLQuKkpI=
+
+Name: res/drawable/sensor_actionbar_more.xml
+SHA1-Digest: wMeOIQeRp7aE+U3wmtkF4Odw/Lk=
+
+Name: res/drawable/dashboard_tile_background.xml
+SHA1-Digest: QPZuaJNRFNFD/UARSOrp4yZStYw=
+
+Name: res/drawable-xxhdpi-v4/chuanganqi_00007.png
+SHA1-Digest: n5mI2petZt61ods1+vQXOkkcNsE=
+
+Name: res/layout/g_sensor_activity.xml
+SHA1-Digest: 5y/qzpNziV6KKT2H9PprCGkWPak=
+
+Name: res/drawable-xxhdpi-v4/finger_error.png
+SHA1-Digest: vD6EU8DWhU8PbtROOTvScqgGtzs=
+
+Name: res/drawable-xxhdpi-v4/chuanganqi_00004.png
+SHA1-Digest: uP5CzIKJeI//XL/6O5WXG6ADD6k=
+
