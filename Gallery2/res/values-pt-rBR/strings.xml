@@ -287,8 +287,8 @@
     <string name="crop_wallpaper">Cortar papel de parede</string>
     <string name="create_info">Este widget foi criado!</string>
     <string name="tab_camera">Câmera</string>
-    <string name="tab_albumset">Albumset</string>
-    <string name="tab_cloud">Cloud</string>
+    <string name="tab_albumset">Definir albúm</string>
+    <string name="tab_cloud">Núvem</string>
     <string name="click_to_login">Entrar na conta nubia</string>
     <string name="toast_share_no_selection">Selecione algumas fotos.</string>
     <string name="share_exceed_max_number">Limite superior 300 imagens</string>
@@ -480,7 +480,7 @@
 	<string name="permission_request">Protocolo de usuário</string>
 	<string name="permission_allow">Permitir</string>
     <string name="permission_deny">Sair</string>
-    <string name="permission_verify">Clicando em aceitgar, você estará concordando com os termos.</string>	
+    <string name="permission_verify">Clicando em aceitar, você estará concordando com os termos.</string>	
     <string name="gallery_permission">"1. Durante o processo de utilização, a aplicação solicita as permissões para Acesso de Rede Completo, incluindo os Dados Móveis e as Redes Wi-Fi. O tráfego de dados ocorridos serão cobrados directamente pelo seu operador. Para detalhes, favor consultar o seu operador.
 2.Durante o processo de utilização, a aplicação solicita a recolha da sua informação de localização geografica.
 3.Durante o processo de utilização, a aplicação solicita o acesso à sua informação social de comunicação, incluindo os contactos, anexos de Email.
