@@ -164,7 +164,7 @@ begin
   end;
 
 
-
+  cdsTranslate.DisableControls;
   cdsTranslate.First;
   label1.Caption := 'Traduzindo.....';
   try

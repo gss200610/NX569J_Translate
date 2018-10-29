@@ -176,7 +176,7 @@ object Form1: TForm1
     Top = 54
     Width = 75
     Height = 25
-    Caption = 'Button3'
+    Caption = 'Traduzir'
     TabOrder = 5
     OnClick = Button3Click
   end
