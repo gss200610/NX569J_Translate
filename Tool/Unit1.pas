@@ -37,6 +37,8 @@ type
     WebBrowser1: TWebBrowser;
     DBNavigator1: TDBNavigator;
     Button5: TButton;
+    OpenDialog1: TOpenDialog;
+    Button6: TButton;
     procedure edtAChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure Button2Click(Sender: TObject);
@@ -48,6 +50,7 @@ type
     procedure Button1Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
+    procedure Button6Click(Sender: TObject);
   private
     wListaOrig, wListaPT, wListaDiff, wListaFinal : TStringList ;
     procedure ListValues(const FileName: string; Strings: TStrings; flag : Integer = 0);
@@ -56,6 +59,7 @@ type
     procedure ListFinalValues(const FileName: string; Strings: TStrings);
     function TranslateViaGoogle(textToTranslate: string): string;
     function GetElementById(const Doc: IDispatch; const Id: string): IDispatch;
+    function MD5(const fileName: string): string;
     { Private declarations }
   public
     { Public declarations }
@@ -73,9 +77,26 @@ var
 implementation
 
 uses
-  Winapi.ShellAPI, Web.HTTPApp, System.StrUtils;
+  Winapi.ShellAPI, Web.HTTPApp, System.StrUtils, ACBrUtil, IdHashMessageDigest, idHash;
 
 {$R *.dfm}
+
+function TForm1.MD5(const fileName : string) : string;
+var
+  IdMD5: TIdHashMessageDigest5;
+  FS: TFileStream;
+begin
+  IdMD5 := nil;
+  FS := nil;
+  try
+    IdMD5 := TIdHashMessageDigest5.Create;
+    FS := TFileStream.Create(FileName, fmOpenRead or fmShareDenyWrite);
+    Result := IdMD5.HashStreamAsHex(FS)
+  finally
+    FS.Free;
+    IdMD5.Free;
+  end;
+end;
 
 procedure TForm1.Button1Click(Sender: TObject);
 begin
@@ -256,6 +277,12 @@ begin
   cdsTranslate.SaveToFile(sfileSave);
 end;
 
+procedure TForm1.Button6Click(Sender: TObject);
+begin
+  if OpenDialog1.Execute then
+    ShowMessage( md5(OpenDialog1.FileName) );
+end;
+
 procedure TForm1.edtAChange(Sender: TObject);
 begin
 //  if FileExists(edta.Text) then
@@ -285,6 +312,7 @@ end;
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
+
   cdsTranslate.CreateDataSet;
   if FileExists(ExtractFilePath(Application.ExeName) + 'traduzir.xml' ) then
   begin

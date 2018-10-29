@@ -318,6 +318,15 @@ object Form1: TForm1
     TabOrder = 14
     OnClick = Button5Click
   end
+  object Button6: TButton
+    Left = 632
+    Top = 25
+    Width = 75
+    Height = 25
+    Caption = 'Button6'
+    TabOrder = 15
+    OnClick = Button6Click
+  end
   object XMLDocument1: TXMLDocument
     Options = [doNodeAutoCreate, doNodeAutoIndent, doAttrNull, doAutoPrefix, doNamespaceDecl]
     Left = 624
@@ -382,5 +391,9 @@ object Form1: TForm1
     SSLOptions.VerifyDepth = 0
     Left = 384
     Top = 376
+  end
+  object OpenDialog1: TOpenDialog
+    Left = 520
+    Top = 16
   end
 end
