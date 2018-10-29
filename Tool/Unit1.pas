@@ -5,19 +5,57 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, AdvEdit, AdvEdBtn,
-  AdvFileNameEdit;
+  AdvFileNameEdit, ComObj, MSXML, AdvDirectoryEdit, Xml.xmldom, Xml.XMLDoc,
+  Xml.XMLIntf, AdvMemo, Advmxml, Vcl.Clipbrd, Data.DB, Vcl.Grids, Vcl.DBGrids,
+  Datasnap.DBClient, Vcl.Mask, DBCtrlsEh, Vcl.DBCtrls, IdBaseComponent,
+  IdComponent, IdTCPConnection, IdTCPClient, IdHTTP, IdIOHandler,
+  IdIOHandlerSocket, IdIOHandlerStack, IdSSL, IdSSLOpenSSL, MSHTML,
+  Winapi.ActiveX, Vcl.OleCtrls, SHDocVw, Vcl.ExtCtrls;
 
 type
   TForm1 = class(TForm)
-    Memo1: TMemo;
-    Memo2: TMemo;
     edtA: TAdvFileNameEdit;
     edtB: TAdvFileNameEdit;
     Button1: TButton;
+    Button2: TButton;
+    AdvDirectoryEdit1: TAdvDirectoryEdit;
+    Label1: TLabel;
+    XMLDocument1: TXMLDocument;
+    Button3: TButton;
+    Button4: TButton;
+    DBGrid1: TDBGrid;
+    cdsTranslate: TClientDataSet;
+    DSTranslate: TDataSource;
+    edtPesquisaTag: TAdvEdit;
+    edtPesquisaTexto: TAdvEdit;
+    cdsTranslatetagorig: TStringField;
+    cdsTranslatevalororig: TStringField;
+    DBMemo1: TDBMemo;
+    IdHTTP1: TIdHTTP;
+    IdSSLIOHandlerSocketOpenSSL1: TIdSSLIOHandlerSocketOpenSSL;
+    Memo1: TMemo;
+    WebBrowser1: TWebBrowser;
+    DBNavigator1: TDBNavigator;
+    Button5: TButton;
     procedure edtAChange(Sender: TObject);
-    procedure Button1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure Button4Click(Sender: TObject);
+    procedure DBGrid1TitleClick(Column: TColumn);
+    procedure edtPesquisaTagChange(Sender: TObject);
+    procedure edtPesquisaTextoChange(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
   private
+    wListaOrig, wListaPT, wListaDiff, wListaFinal : TStringList ;
+    procedure ListValues(const FileName: string; Strings: TStrings; flag : Integer = 0);
+    procedure RemoverDuplicados;
+    procedure CompareStringLists(List1, List2: TStringList; Missing1:TStrings);
+    procedure ListFinalValues(const FileName: string; Strings: TStrings);
+    function TranslateViaGoogle(textToTranslate: string): string;
+    function GetElementById(const Doc: IDispatch; const Id: string): IDispatch;
     { Private declarations }
   public
     { Public declarations }
@@ -25,87 +63,511 @@ type
 
 var
   Form1: TForm1;
+  const VALUES_DEFAUL = 'values';
+  const VALUES_PTBR = 'values-pt-rBR';
+  const RESOURCE_NAME = 'strings.xml';
+  const URL_YANDEX_TRANSLATE = 'https://translate.yandex.net/api/v1.5/tr/translate?key=';
+  const URL_GOOGLE_TRANSLATE = 'http://translate.google.com.br/'+
+                               'translate_t?&ie=UTF8&text=%s&langpair=%s';
 
 implementation
 
 uses
-  Winapi.ShellAPI;
+  Winapi.ShellAPI, Web.HTTPApp, System.StrUtils;
 
 {$R *.dfm}
 
 procedure TForm1.Button1Click(Sender: TObject);
-var
-  tag, tag2, tagDiff, linha, linha2 : string;
-  I, X: Integer;
-  wLista : TStrings;
-  wListaEx1, wListaEx2 : TStringList;
 begin
-  if not FileExists(edta.Text) then
+  cdsTranslate.EmptyDataSet;
+  cdsTranslate.Close;
+  if FileExists( ExtractFilePath(Application.ExeName) + 'TRADUZIR.XML' ) then
+    DeleteFile( ExtractFilePath(Application.ExeName) + 'TRADUZIR.XML' );
+
+  cdsTranslate.CreateDataSet;
+  cdsTranslate.Open;
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+var
+  FilePathName, FilePathName1 : string;
+  I: Integer;
+
+begin
+  cdsTranslate.EmptyDataSet;
+  wListaOrig.Clear;
+  wListaPT.Clear;
+  wListaDiff.Clear;
+
+  FilePathName := IncludeTrailingPathDelimiter(AdvDirectoryEdit1.Text)+
+                 'res\' + VALUES_DEFAUL + '\' + RESOURCE_NAME;
+
+  if FileExists(FilePathName) then
+    ListValues(FilePathName, wListaOrig);
+
+  FilePathName1 := IncludeTrailingPathDelimiter(AdvDirectoryEdit1.Text)+
+                 'res\' + VALUES_PTBR + '\' + RESOURCE_NAME;
+  if FileExists(FilePathName1) then
+    ListValues(FilePathName1, wListaPT, 1);
+
+ // RemoverDuplicados();
+
+  wListaOrig.Sort;
+  wListaPT.Sort;
+
+  wListaOrig.SaveToFile( ExtractFilePath(Application.ExeName)+ 'original.txt');
+  wListaPT.SaveToFile( ExtractFilePath(Application.ExeName)+ 'traducao.txt');
+
+  Label1.Caption := 'original: ' + (wListaOrig.Count -1 ).ToString + '  ' +
+  'traducao: ' + (wListaPT.Count -1 ).ToString ;
+
+  wListaOrig.Duplicates := dupIgnore;
+  wListaPT.Duplicates := dupIgnore;
+  CompareStringLists(wListaOrig, wListaPT, wListaDiff);
+  wListaDiff.Duplicates := dupIgnore;
+  try
+    cdsTranslate.DisableControls;
+    ListFinalValues(FilePathName, wListaDiff);
+  finally
+    cdsTranslate.EnableControls;
+    DBGrid1.Width := DBGrid1.Width + 1;
+    DBGrid1.Width := DBGrid1.Width - 1;
+    Application.ProcessMessages;
+  end;
+
+
+
+end;
+
+procedure TForm1.Button3Click(Sender: TObject);
+var
+  texto : string;
+  bookmark : TBookmark;
+begin
+
+  if Application.MessageBox('selecionados', 'pergunta', MB_YESNO + MB_ICONQUESTION) = IDNO then
   begin
-    ShowMessage('arquivo inexistente.');
+    DBGrid1.Options := DBGrid1.Options -[dgMultiSelect];
+    texto := TranslateViaGoogle( cdsTranslatevalororig.AsString );
+    Sleep(100);
+    Application.ProcessMessages;
+    Memo1.Lines.Text := texto;
+
+    if not texto.IsEmpty then
+    begin
+      cdsTranslate.Edit;
+      cdsTranslatevalororig.AsAnsiString := texto;
+      cdsTranslate.Post;
+    end;
+    DBGrid1.Options := DBGrid1.Options +[dgMultiSelect];
     Exit;
   end;
-  Memo1.Lines.LoadFromFile(edtA.Text);
-
-  wListaEx1 := TStringList.Create;
-  wListaEx2 := TStringList.Create;
-  wLista := TStringList.Create;
-  wLista.LoadFromFile(edtB.Text);
-  for I := 0 to wLista.Count -1 do
-  begin
-    linha := wLista[i];
-    tag := Copy(linha, Pos('"', linha)+1, Pos('">', linha)-Pos('"', linha)-1  );
-    tagDiff := '';
-    if tag.Trim <> '' then
-      wListaEx2.Add(tag);
-  end;
-  wListaEx2.Sort;
 
 
-  for I := 0 to Memo1.Lines.Count -1 do
-  begin
-    linha := Memo1.Lines[i];
-    tag := Copy(linha, Pos('"', linha)+1, Pos('">', linha)-Pos('"', linha)-1  );
-    tagDiff := '';
-    if Pos(tag, wListaEx2.Text) = 0 then
+
+  cdsTranslate.First;
+  label1.Caption := 'Traduzindo.....';
+  try
+    while not cdsTranslate.Eof do
     begin
-      if tag.Trim <> '' then
+      if DBGrid1.SelectedRows.CurrentRowSelected then
       begin
-        if Pos('</', linha) = 0 then
-          linha := linha + ' SEM TAG';
+        texto := TranslateViaGoogle( cdsTranslatevalororig.AsString );
+        Sleep(100);
+        Memo1.Lines.Text := texto;
 
-        wListaEx1.Add(linha);
-        Memo2.Lines.Add(linha);
+        if not texto.IsEmpty then
+        begin
+          cdsTranslate.Edit;
+          cdsTranslatevalororig.AsAnsiString := texto;
+          cdsTranslate.Post;
+        end;
+
       end;
+      Application.ProcessMessages;
+      cdsTranslate.Next;
     end;
 
+  finally
+    cdsTranslate.EnableControls;
+    label1.Caption := 'finalizado';
   end;
-  wListaEx1.Sort;
-  wListaEx1.SaveToFile('DIFF.xml');
 
 
-  wListaEx2.Sort;
-  wListaEx2.SaveToFile('listaB.txt');
-  wLista.Free;
-  wListaEx1.Free;
-  wListaEx2.Free;
+end;
 
-  ShellExecute(Application.Handle, PChar('open'), PChar('notepad++.exe'), PChar(GetCurrentDir +  '\DIFF.xml'), nil, SW_NORMAL);
-  //WinExec(PAnsiChar('notepad.exe '+ GetCurrentDir +  '\DIFF.txt'), SW_SHOWNORMAL);
+procedure TForm1.Button4Click(Sender: TObject);
+var
+  Documento: IXMLDOMDocument;
+  AttributeNode: IXMLDOMAttribute;
+  Elemento: IXMLDOMElement;
+  novoCampo : IXMLDOMElement;
+begin
+  Documento := CoDOMDocument.Create();
+  Documento.async := False;
+  Documento.documentElement := Documento.createElement('resources');
+ // Documento.documentElement.appendChild(Elemento);
+  cdsTranslate.DisableControls;
+  cdsTranslate.First;
+  try
+    while not cdsTranslate.Eof do
+    begin
+      novoCampo     := Documento.createElement('string');
+      novoCampo.setAttribute('name', cdsTranslatetagorig.AsString);
+      novoCampo.text := cdsTranslatevalororig.AsAnsiString;
+      Documento.documentElement.appendChild(novoCampo);
+      cdsTranslate.Next;
+    end;
 
+
+    XMLDocument1.Active := False;
+    XMLDocument1.LoadFromXML( Xml.XMLDoc.FormatXMLData(Documento.xml) );
+    XMLDocument1.Active := True;
+    XMLDocument1.Options := [doNodeAutoIndent];
+    XMLDocument1.Encoding := 'utf-16';
+    XMLDocument1.Version  := '1.0';
+
+    XMLDocument1.SaveToFile(ExtractFilePath(Application.ExeName) + 'ARQUIVOS.XML' );
+    Clipboard.AsText := Xml.XMLDoc.FormatXMLData(XMLDocument1.XML.Text);
+    XMLDocument1.Active := False;
+
+
+  finally
+   // Memo1.Lines.Text := Documento.xml;
+    cdsTranslate.First;
+    cdsTranslate.EnableControls;
+    Documento := nil;
+  end;
+  ShowMessage('Arquivo salvo com sucesso e copiado para área de transferência!');
+end;
+
+procedure TForm1.Button5Click(Sender: TObject);
+var
+  sfileSave : string;
+begin
+  sfileSave := Copy(AdvDirectoryEdit1.Text, System.SysUtils.LastDelimiter('\', AdvDirectoryEdit1.Text)+1  );
+  sfileSave := ExtractFilePath(Application.ExeName) + sfileSave + '.XML';
+
+
+  if cdsTranslate.State in [dsEdit] then
+    cdsTranslate.Post;
+
+  cdsTranslate.SaveToFile(ExtractFilePath(Application.ExeName) + 'TRADUZIR.XML', dfXML);
+  cdsTranslate.SaveToFile(sfileSave);
 end;
 
 procedure TForm1.edtAChange(Sender: TObject);
 begin
-  if FileExists(edta.Text) then
-    Memo1.Lines.LoadFromFile(edtA.Text);
+//  if FileExists(edta.Text) then
+  //  Memo1.Lines.LoadFromFile(edtA.Text);
+
+end;
+
+procedure TForm1.edtPesquisaTagChange(Sender: TObject);
+begin
+  cdsTranslate.Locate('tagorig', edtPesquisaTag.Text, [loPartialKey]);
+end;
+
+procedure TForm1.edtPesquisaTextoChange(Sender: TObject);
+begin
+  cdsTranslate.Locate('valororig', edtPesquisaTexto.Text, [loPartialKey]);
+
+end;
+
+procedure TForm1.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  wListaOrig.Free;
+  wListaPT.Free;
+  wListaFinal.Free;
+  wListaDiff.Free;
 
 end;
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
-  Memo1.Clear;
-  Memo2.Clear;
+  cdsTranslate.CreateDataSet;
+  if FileExists(ExtractFilePath(Application.ExeName) + 'traduzir.xml' ) then
+  begin
+    cdsTranslate.LoadFromFile( ExtractFilePath(Application.ExeName) + 'traduzir.xml'  );
+  end;
+  cdsTranslate.Open;
+
+  wListaOrig := TStringList.Create;
+  wListaPT := TStringList.Create;
+  wListaFinal := TStringList.Create;
+  wListaDiff := TStringList.Create;
+  wListaDiff.Sorted := True;
+end;
+
+procedure TForm1.ListValues(const FileName: string; Strings: TStrings; flag : Integer = 0);
+var
+  I, J: Integer;
+  Document: IXMLDOMDocument;
+  AttributeNode: IXMLDOMNode;
+  ReportSubnodes: IXMLDOMNodeList;
+  OperationNodes: IXMLDOMNodeList;
+  ParameterNodes: IXMLDOMNodeList;
+begin
+
+  Document := CoDOMDocument.Create;
+  if Assigned(Document) and Document.load(FileName) then
+  begin
+    // select all direct child nodes of the redlineaudit/report/ node
+    ReportSubnodes := Document.selectSingleNode('resources').childNodes;
+    // check if the redlineaudit/report/ node was found and if so, then...
+    if Assigned(ReportSubnodes) then
+    begin
+      // lock the output string list for update
+      Strings.BeginUpdate;
+      try
+        // iterate all direct children of the redlineaudit/report/ node
+        for I := 0 to ReportSubnodes.length - 1 do
+        begin
+          // try to find the "index" attribute of the iterated child node
+          if ReportSubnodes[I].attributes <> nil then
+            AttributeNode := ReportSubnodes[I].attributes.item[0];
+          // and if the "index" attribute is found, add a line to the list
+
+          if Assigned(AttributeNode) then
+          begin
+            if ( AttributeNode.nodeValue <> '' ) then
+            begin
+              Strings.Add( AttributeNode.nodeValue );
+            end;
+
+          // select all "operation" child nodes of the iterated child node
+          end;
+        end;
+      finally
+        // unlock the output string list for update
+        Strings.EndUpdate;
+      end;
+    end;
+    Document := nil;
+  end;
+
+end;
+
+procedure TForm1.ListFinalValues(const FileName: string; Strings: TStrings);
+var
+  I, J: Integer;
+  Document, Documentfinal: IXMLDOMDocument;
+  AttributeNode: IXMLDOMNode;
+  ReportSubnodes: IXMLDOMNodeList;
+  OperationNodes: IXMLDOMNodeList;
+  ParameterNodes: IXMLDOMNodeList;
+  elemento: IXMLDOMElement;
+  comentario: IXMLDOMComment;
+  valor : string;
+begin
+
+  Documentfinal := CoDOMDocument.Create;
+
+  Documentfinal.async := False;
+
+  Documentfinal.documentElement := Documentfinal.createElement('resources');
+  Document := CoDOMDocument.Create;
+  if Assigned(Document) and Document.load(FileName) then
+  begin
+    // select all direct child nodes of the redlineaudit/report/ node
+    ReportSubnodes := Document.selectSingleNode('resources').childNodes;
+    // check if the redlineaudit/report/ node was found and if so, then...
+    if Assigned(ReportSubnodes) then
+    begin
+      // lock the output string list for update
+      try
+        // iterate all direct children of the redlineaudit/report/ node
+        for I := 0 to ReportSubnodes.length - 1 do
+        begin
+          // try to find the "index" attribute of the iterated child node
+          if ReportSubnodes[I].attributes <> nil then
+            AttributeNode := ReportSubnodes[I].attributes.item[0];
+          // and if the "index" attribute is found, add a line to the list
+
+          if Assigned(AttributeNode) then
+          begin
+            if ( AttributeNode.nodeValue <> '' ) then
+            begin
+              if Strings.IndexOf( AttributeNode.nodeValue ) > 0 then
+              begin
+               // element := Documentfinal.createElement('string');
+
+                elemento := Documentfinal.createElement('string');
+                elemento.setAttribute('name', AttributeNode.nodeValue);
+                elemento.text := ReportSubnodes[I].text;
+
+                Documentfinal.documentElement.appendChild(elemento);
+
+                cdsTranslate.Append;
+                cdsTranslatetagorig.AsAnsiString := AttributeNode.nodeValue;
+                cdsTranslatevalororig.AsAnsiString :=ReportSubnodes[I].text;
+                cdsTranslate.Post;
+              end;
+             // wListaPT.Add(AttributeNode.nodeValue);
+            end;
+
+          // select all "operation" child nodes of the iterated child node
+          end;
+        end;
+      finally
+        // unlock the output string list for update
+      end;
+    end;
+   // Memo5.Lines.Text := Documentfinal.xml;
+   // Documentfinal.save(ExtractFilePath(Application.ExeName)+ ' final.xml' );
+   // Documentfinal := nil;
+    Document := nil;
+    XMLDocument1.Active := False;
+    XMLDocument1.LoadFromXML(Documentfinal.xml);
+    XMLDocument1.Active := True;
+    XMLDocument1.Options := [doNodeAutoIndent];
+    XMLDocument1.Encoding := 'utf-16';
+    XMLDocument1.Version  := '1.0';
+
+
+
+    XMLDocument1.SaveToFile(ExtractFilePath(Application.ExeName) + 'ARQUIVOS.XML' );
+
+    Clipboard.AsText := Xml.XMLDoc.FormatXMLData(XMLDocument1.XML.Text);
+    Documentfinal := nil;
+    XMLDocument1.Active := False;
+    cdsTranslate.SaveToFile(ExtractFilePath(Application.ExeName) + 'TRADUZIR.XML', dfXML);
+  end;
+
+end;
+
+
+
+procedure AddAttr (iNode: IDOMNode; Name, Value: string);
+var
+  iAttr: IDOMNode;
+begin
+  iAttr := iNode.ownerDocument.createAttribute (name);
+  iAttr.nodeValue := Value;
+  iNode.attributes.setNamedItem (iAttr);
+end;
+
+procedure TForm1.RemoverDuplicados;
+var
+  I, K: Integer;
+  wlista : TStrings;
+begin
+
+  for I := 0 to wListaOrig.Count - 1 do //Compare to everything on the right
+  for K := wListaOrig.Count - 1 downto I+1 do //Reverse loop allows to Remove items safely
+    if wListaOrig[K] = wListaOrig[I] then
+    begin
+      wListaOrig.Delete(K);
+    end;
+
+  for I := 0 to wListaPT.Count - 1 do //Compare to everything on the right
+  for K := wListaPT.Count - 1 downto I+1 do //Reverse loop allows to Remove items safely
+    if wListaPT[K] = wListaPT[I] then
+    begin
+      wListaPT.Delete(K);
+    end;
+
+
+end;
+
+
+procedure TForm1.CompareStringLists(List1, List2: TStringList;
+  Missing1: TStrings);
+var
+  I: Integer;
+  J: Integer;
+begin
+  List1.Sort;
+  List2.Sort;
+  I := 0;
+  J := 0;
+  while (I < List1.Count) and (J < List2.Count) do
+  begin
+    if List1[I] < List2[J] then
+    begin
+      Missing1.Add(List1[I]);
+      Inc(I);
+    end
+    else if List1[I] > List2[J] then
+    begin
+      Missing1.Add(List2[J]);
+      Inc(J);
+    end
+    else
+    begin
+      Inc(I);
+      Inc(J);
+    end;
+  end;
+  for I := I to List1.Count - 1 do
+    Missing1.Add(List1[I]);
+
+  for J := J to List2.Count - 1 do
+    Missing1.Add(List2[J]);
+
+end;
+
+procedure TForm1.DBGrid1TitleClick(Column: TColumn);
+begin
+  cdsTranslate.IndexFieldNames := Column.FieldName;
+end;
+
+function TForm1.TranslateViaGoogle(textToTranslate: string ):string;
+var
+  elemento : IHTMLElement;
+  url_consulta : string;
+begin
+
+  result := '';
+//  IdHTTP1.Request.Accept := 'text/html, */*';
+//  IdHTTP1.Request.UserAgent := 'Mozilla/3.0 (compatible; IndyLibrary)';
+//  IdHTTP1.Request.ContentType := 'application/x-www-form-urlencoded';
+  IdHTTP1.HandleRedirects := True;
+//  IdHTTP1.Request.
+
+  url_consulta := Format(URL_GOOGLE_TRANSLATE, [ Web.HTTPApp.HTTPEncode( textToTranslate), 'pt']);
+
+  //result := IdHTTP1.Get(Format(URL_GOOGLE_TRANSLATE, [ Web.HTTPApp.HTTPEncode( textToTranslate), 'pt']) );
+  WebBrowser1.Navigate(url_consulta  );
+  while WebBrowser1.ReadyState <> READYSTATE_COMPLETE do
+  Application.ProcessMessages;
+
+  elemento := (WebBrowser1.Document as IHTMLDocument3).getElementById('result_box');
+  //elemento := GetElementById(WebBrowser1.Document, 'result_box') as IHTMLElement;
+  Result := elemento.innerText ;
+
+
+end;
+
+function TForm1.GetElementById(const Doc: IDispatch; const Id: string): IDispatch;
+var
+  Document: IHTMLDocument2;     // IHTMLDocument2 interface of Doc
+  Body: IHTMLElement2;          // document body element
+  Tags: IHTMLElementCollection; // all tags in document body
+  Tag: IHTMLElement;            // a tag in document body
+  I: Integer;                   // loops thru tags in document body
+begin
+  Result := nil;
+  // Check for valid document: require IHTMLDocument2 interface to it
+  if not Supports(Doc, IHTMLDocument2, Document) then
+    raise Exception.Create('Invalid HTML document');
+  // Check for valid body element: require IHTMLElement2 interface to it
+  if not Supports(Document.body, IHTMLElement2, Body) then
+    raise Exception.Create('Can''t find <body> element');
+  // Get all tags in body element ('*' => any tag name)
+  Tags := Body.getElementsByTagName('*');
+  // Scan through all tags in body
+  for I := 0 to Pred(Tags.length) do
+  begin
+    // Get reference to a tag
+    Tag := Tags.item(I, EmptyParam) as IHTMLElement;
+    // Check tag's id and return it if id matches
+    if AnsiSameText(Tag.id, Id) then
+    begin
+      Result := Tag;
+      Break;
+    end;
+  end;
 end;
 
 end.

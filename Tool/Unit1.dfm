@@ -301,6 +301,23 @@ object Form1: TForm1
       8000000000000000000000000000000000000000000000000000000000000000
       00000000000000000100000000000000000000000000000000000000}
   end
+  object DBNavigator1: TDBNavigator
+    Left = 818
+    Top = 23
+    Width = 400
+    Height = 25
+    DataSource = DSTranslate
+    TabOrder = 13
+  end
+  object Button5: TButton
+    Left = 1233
+    Top = 54
+    Width = 75
+    Height = 25
+    Caption = 'Gravar'
+    TabOrder = 14
+    OnClick = Button5Click
+  end
   object XMLDocument1: TXMLDocument
     Options = [doNodeAutoCreate, doNodeAutoIndent, doAttrNull, doAutoPrefix, doNamespaceDecl]
     Left = 624
