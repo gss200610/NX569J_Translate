@@ -10,7 +10,7 @@ uses
   Datasnap.DBClient, Vcl.Mask, DBCtrlsEh, Vcl.DBCtrls, IdBaseComponent,
   IdComponent, IdTCPConnection, IdTCPClient, IdHTTP, IdIOHandler,
   IdIOHandlerSocket, IdIOHandlerStack, IdSSL, IdSSLOpenSSL, MSHTML,
-  Winapi.ActiveX, Vcl.OleCtrls, SHDocVw, Vcl.ExtCtrls;
+  Winapi.ActiveX, Vcl.OleCtrls, SHDocVw, Vcl.ExtCtrls, Winapi.WinInet, IdURI;
 
 type
   TForm1 = class(TForm)
@@ -60,9 +60,12 @@ type
     function TranslateViaGoogle(textToTranslate: string): string;
     function GetElementById(const Doc: IDispatch; const Id: string): IDispatch;
     function MD5(const fileName: string): string;
+    function TranslateViaMS(textToTranslate: string): string;
     { Private declarations }
   public
     { Public declarations }
+    procedure WinInet_HttpGet(const Url: string; Stream: TStream); overload;
+    function WinInet_HttpGet(const Url: string): string; overload;
   end;
 
 var
@@ -73,6 +76,7 @@ var
   const URL_YANDEX_TRANSLATE = 'https://translate.yandex.net/api/v1.5/tr/translate?key=';
   const URL_GOOGLE_TRANSLATE = 'http://translate.google.com.br/'+
                                'translate_t?&ie=UTF8&text=%s&langpair=%s';
+  const CHAVE_API = '9f04fb1daa2644869bf19e5ccac4243e';
 
 implementation
 
@@ -80,6 +84,86 @@ uses
   Winapi.ShellAPI, Web.HTTPApp, System.StrUtils, ACBrUtil, IdHashMessageDigest, idHash;
 
 {$R *.dfm}
+
+procedure TForm1.WinInet_HttpGet(const Url: string;Stream:TStream);
+const
+BuffSize = 1024*1024;
+var
+  hInter   : HINTERNET;
+  UrlHandle: HINTERNET;
+  BytesRead: DWORD;
+  Buffer   : Pointer;
+begin
+  hInter := InternetOpen('', INTERNET_OPEN_TYPE_PRECONFIG, nil, nil, 0);
+  if Assigned(hInter) then
+    try
+      Stream.Seek(0,0);
+      GetMem(Buffer,BuffSize);
+      try
+          UrlHandle := InternetOpenUrl(hInter, PChar(Url), nil, 0, INTERNET_FLAG_RELOAD, 0);
+          if Assigned(UrlHandle) then
+          begin
+            repeat
+              InternetReadFile(UrlHandle, Buffer, BuffSize, BytesRead);
+              if BytesRead>0 then
+               Stream.WriteBuffer(Buffer^,BytesRead);
+            until BytesRead = 0;
+            InternetCloseHandle(UrlHandle);
+          end;
+      finally
+        FreeMem(Buffer);
+      end;
+    finally
+     InternetCloseHandle(hInter);
+    end;
+end;
+
+function TForm1.WinInet_HttpGet(const Url: string): string;
+Var
+  StringStream : TStringStream;
+begin
+  Result:='';
+    StringStream:=TStringStream.Create('',TEncoding.UTF8);
+    try
+        WinInet_HttpGet(Url,StringStream);
+        if StringStream.Size>0 then
+        begin
+          StringStream.Seek(0,0);
+          Result:=StringStream.ReadString(StringStream.Size);
+        end;
+    finally
+      StringStream.Free;
+    end;
+end;
+
+function TForm1.TranslateViaMS(textToTranslate: string):string;
+const
+  MicrosoftTranslatorTranslateUri = 'http://api.microsofttranslator.com/v2/'+
+          'Http.svc/Translate?appId=%s&text=%s&from=%s&to=%s';
+var
+   XmlDoc : OleVariant;
+   Node   : OleVariant;
+begin
+ //Make the http request
+
+
+ Result:=WinInet_HttpGet(Format(MicrosoftTranslatorTranslateUri,
+                     ['Gilmar', textToTranslate ,'en', 'pt' ]));
+ //Create  a XML object o parse the result
+  XmlDoc:= CreateOleObject('Msxml2.DOMDocument.6.0');
+  try
+    XmlDoc.Async := False;
+    //load the XML retuned string
+    XmlDoc.LoadXML(Result);
+    if (XmlDoc.parseError.errorCode <> 0) then
+     raise Exception.CreateFmt('Error in Xml Data %s',[XmlDoc.parseError]);
+    Node:= XmlDoc.documentElement;
+    if not VarIsClear(Node) then
+     Result:=XmlDoc.Text;
+  finally
+     XmlDoc:=Unassigned;
+  end;
+end;
 
 function TForm1.MD5(const fileName : string) : string;
 var
@@ -277,10 +361,69 @@ begin
   cdsTranslate.SaveToFile(sfileSave);
 end;
 
+function translate(sText, sFrom, sTo: string): string;
+const
+  URIToken = 'https://api.cognitive.microsoft.com/sts/v1.0/issueToken';
+  URITranslate =
+  'https://api.microsofttranslator.com/v2/http.svc/Translate';
+  SubscriptionKey = '<key of service in azure>';
+  COMPLETED = 4;
+  OK = 200;
+  n10min: real = 1 / 24 / 6;
+var
+  XMLHTTPRequest: IXMLHTTPRequest;
+  sToken: string;
+  Uri: string;
+  XMLDOMDocument: IXMLDOMDocument;
+  sActiveToken: string;
+  dtTokenDate: TDateTime;
+
+begin
+  Result := '';
+  try
+    XMLHTTPRequest := CreateOleObject('MSXML2.XMLHTTP') as
+    IXMLHTTPRequest;
+    if (sActiveToken = '') or (Now - dtTokenDate >= n10min) then
+    begin
+      dtTokenDate:=Now;
+      XMLHTTPRequest.Open('POST', URIToken, False, '', '');
+      XMLHTTPRequest.setRequestHeader('Ocp-Apim-Subscription-Key',
+      CHAVE_API);
+      XMLHTTPRequest.send('');
+      if (XMLHTTPRequest.readyState = COMPLETED) and
+      (XMLHTTPRequest.status = OK) then
+      begin
+        sActiveToken := XMLHTTPRequest.responseText;
+      end else begin
+        sActiveToken := '';
+      end;
+    end;
+
+    Uri := UriTranslate + '?appid=Bearer ' + sActiveToken + '&text=' +
+    sText + '&from=' + sFrom + '&to=' + sTo;
+    Uri := TIdURI.PathEncode(Uri);
+    XMLHTTPRequest.Open('GET', URI, False, '', '');
+    XMLHTTPRequest.send('');
+    if (XMLHTTPRequest.readyState = COMPLETED) and
+    (XMLHTTPRequest.status = OK) then
+    begin
+      sToken := XMLHTTPRequest.responseText;
+      try
+        XMLDOMDocument := CoDOMDocument.Create;
+        XMLDOMDocument.loadXML(sToken);
+        sToken := XMLDOMDocument.Text;
+        Result := sToken;
+      finally
+        XMLDOMDocument := nil;
+      end;
+    end;
+  finally
+  end;
+end;
+
 procedure TForm1.Button6Click(Sender: TObject);
 begin
-  if OpenDialog1.Execute then
-    ShowMessage( md5(OpenDialog1.FileName) );
+  translate(cdsTranslatevalororig.AsString, 'en', 'pt');
 end;
 
 procedure TForm1.edtAChange(Sender: TObject);
