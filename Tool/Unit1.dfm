@@ -289,8 +289,8 @@ object Form1: TForm1
     TabOrder = 11
   end
   object WebBrowser1: TWebBrowser
-    Left = 888
-    Top = 568
+    Left = 1031
+    Top = 400
     Width = 300
     Height = 150
     TabOrder = 12
@@ -326,6 +326,22 @@ object Form1: TForm1
     Caption = 'Button6'
     TabOrder = 15
     OnClick = Button6Click
+  end
+  object CheckUsarMS: TCheckBox
+    Left = 826
+    Top = 674
+    Width = 111
+    Height = 17
+    Caption = 'Usar microsoft api'
+    TabOrder = 16
+  end
+  object CheckSelecionados: TCheckBox
+    Left = 978
+    Top = 674
+    Width = 111
+    Height = 17
+    Caption = 'Selecionados'
+    TabOrder = 17
   end
   object XMLDocument1: TXMLDocument
     Options = [doNodeAutoCreate, doNodeAutoIndent, doAttrNull, doAutoPrefix, doNamespaceDecl]

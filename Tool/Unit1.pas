@@ -39,6 +39,8 @@ type
     Button5: TButton;
     OpenDialog1: TOpenDialog;
     Button6: TButton;
+    CheckUsarMS: TCheckBox;
+    CheckSelecionados: TCheckBox;
     procedure edtAChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure Button2Click(Sender: TObject);
@@ -61,6 +63,7 @@ type
     function GetElementById(const Doc: IDispatch; const Id: string): IDispatch;
     function MD5(const fileName: string): string;
     function TranslateViaMS(textToTranslate: string): string;
+    function translate(sText, sFrom, sTo: string): string;
     { Private declarations }
   public
     { Public declarations }
@@ -250,14 +253,16 @@ var
   bookmark : TBookmark;
 begin
 
-  if Application.MessageBox('selecionados', 'pergunta', MB_YESNO + MB_ICONQUESTION) = IDNO then
+  if not CheckSelecionados.Checked then
   begin
     DBGrid1.Options := DBGrid1.Options -[dgMultiSelect];
-    texto := TranslateViaGoogle( cdsTranslatevalororig.AsString );
-    Sleep(100);
-    Application.ProcessMessages;
-    Memo1.Lines.Text := texto;
+    if CheckUsarMS.Checked then
+      texto := translate( cdsTranslatevalororig.AsString, 'en', 'pt')
+    else
+      texto := TranslateViaGoogle( cdsTranslatevalororig.AsString );
 
+    Sleep(100);
+    Update;
     if not texto.IsEmpty then
     begin
       cdsTranslate.Edit;
@@ -277,7 +282,11 @@ begin
     begin
       if DBGrid1.SelectedRows.CurrentRowSelected then
       begin
-        texto := TranslateViaGoogle( cdsTranslatevalororig.AsString );
+        if CheckUsarMS.Checked then
+          texto := translate( cdsTranslatevalororig.AsString, 'en', 'pt')
+        else
+          texto := TranslateViaGoogle( cdsTranslatevalororig.AsString );
+
         Sleep(100);
         Memo1.Lines.Text := texto;
 
@@ -361,7 +370,7 @@ begin
   cdsTranslate.SaveToFile(sfileSave);
 end;
 
-function translate(sText, sFrom, sTo: string): string;
+function TForm1.translate(sText, sFrom, sTo: string): string;
 const
   URIToken = 'https://api.cognitive.microsoft.com/sts/v1.0/issueToken';
   URITranslate =
